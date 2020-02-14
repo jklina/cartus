@@ -522,3 +522,108 @@ Did you mean?  users_path):
 app/controllers/home_controller.rb:4:in `index'
 DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
  (called from load at /Users/joshuaklina/.rbenv/versions/2.6.5/bin/rake:23)
+Started GET "/" for ::1 at 2020-02-14 16:27:29 -0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "333cd8f1476d046304b73499cbf3445345e17884"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 12ms (ActiveRecord: 1.2ms | Allocations: 5837)
+
+
+Started GET "/users/1" for ::1 at 2020-02-14 16:27:29 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 5ms (ActiveRecord: 0.0ms | Allocations: 2226)
+
+
+  
+ActionController::MissingExactTemplate (UsersController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.2.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.2.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.2.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.2.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+clearance (2.1.0) lib/clearance/rack_session.rb:23:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2020-02-14 16:27:51 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.haml within layouts/application
+  Rendered users/show.haml within layouts/application (Duration: 1.9ms | Allocations: 1443)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4482)
+
+
+Started GET "/users/1" for ::1 at 2020-02-14 16:30:38 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  Rendered users/show.haml within layouts/application (Duration: 1.4ms | Allocations: 1443)
+Completed 200 OK in 25ms (Views: 6.1ms | ActiveRecord: 10.0ms | Allocations: 10067)
+
+
