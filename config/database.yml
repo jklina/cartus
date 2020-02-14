@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+test:
+  <<: *default
+  database: openbook_test
+  port: 5433
+
+development:
+  <<: *default
+  database: openbook_development
+  port: 5433
