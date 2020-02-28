@@ -1,1 +1,7 @@
-%p= @user.email
+%h3= @user.email
+%h4= "Posts"
+- @user.posts.each do |post|
+  %p= post.body
+
+= link_to "New Post", new_user_post_path(@user)
+

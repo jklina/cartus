@@ -10,6 +10,13 @@ gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'clearance'
 gem 'haml-rails'
+gem 'simple_form'
+gem 'webpacker', '~> 4.x'
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+end
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

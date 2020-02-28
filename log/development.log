@@ -628,3 +628,628 @@ Completed 200 OK in 25ms (Views: 6.1ms | ActiveRecord: 10.0ms | Allocations: 100
 
 
   [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3717870202314909375)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNameToUsers (20200215000002)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.7ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3717870202314909375)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3717870202314909375)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNameToUsers (20200215000002)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "birthday" date[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200215000002"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3717870202314909375)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-02-28 14:44:21 -0700
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "openbook_development" does not exist
+):
+  
+activerecord (6.0.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:50:in `rescue in postgresql_connection'
+activerecord (6.0.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:33:in `postgresql_connection'
+activerecord (6.0.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:889:in `new_connection'
+activerecord (6.0.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:933:in `checkout_new_connection'
+activerecord (6.0.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:912:in `try_to_checkout_new_connection'
+activerecord (6.0.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:873:in `acquire_connection'
+activerecord (6.0.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:595:in `checkout'
+activerecord (6.0.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:439:in `connection'
+activerecord (6.0.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1121:in `retrieve_connection'
+activerecord (6.0.2.1) lib/active_record/connection_handling.rb:238:in `retrieve_connection'
+activerecord (6.0.2.1) lib/active_record/connection_handling.rb:206:in `connection'
+activerecord (6.0.2.1) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (384.2ms)[0m  [1m[35mCREATE DATABASE "openbook_development" ENCODING = 'unicode'[0m
+  [1m[35m (284.3ms)[0m  [1m[35mCREATE DATABASE "openbook_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying NOT NULL, "encrypted_password" character varying(128) NOT NULL, "confirmation_token" character varying(128), "remember_token" character varying(128) NOT NULL, "first_name" character varying, "last_name" character varying, "birthday" date)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_remember_token" ON "users"  ("remember_token")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200215000002)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-02-28 21:44:42.403928"], ["updated_at", "2020-02-28 21:44:42.403928"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "2de170b7cedcb674e4b23fe1553331a5718600f2"], ["created_at", "2020-02-28 21:44:42.415507"], ["updated_at", "2020-02-28 21:44:42.415507"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (51.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying NOT NULL, "encrypted_password" character varying(128) NOT NULL, "confirmation_token" character varying(128), "remember_token" character varying(128) NOT NULL, "first_name" character varying, "last_name" character varying, "birthday" date)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_remember_token" ON "users"  ("remember_token")[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200215000002)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-02-28 21:44:42.599748"], ["updated_at", "2020-02-28 21:44:42.599748"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-02-28 21:44:42.607993"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "2de170b7cedcb674e4b23fe1553331a5718600f2"], ["created_at", "2020-02-28 21:44:42.614491"], ["updated_at", "2020-02-28 21:44:42.614491"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-02-28 14:44:48 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 227)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 14:44:48 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 10.1ms | Allocations: 1476)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 18.5ms | Allocations: 3241)
+Completed 200 OK in 188ms (Views: 186.8ms | ActiveRecord: 0.0ms | Allocations: 289942)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3717870202314909375)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200228214743)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "body" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_user_id" ON "posts"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200228214743"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3717870202314909375)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/sign_up" for ::1 at 2020-02-28 15:01:22 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Clearance::UsersController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/users/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/users/_form.html.erb (Duration: 1.6ms | Allocations: 510)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/users/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1573)
+Completed 200 OK in 30ms (Views: 10.0ms | ActiveRecord: 9.0ms | Allocations: 12253)
+
+
+Started POST "/users" for ::1 at 2020-02-28 15:01:30 -0700
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"joshua.klina@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (8.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joshua.klina@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (4.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2020-02-28 22:01:30.709581"], ["updated_at", "2020-02-28 22:01:30.709581"], ["email", "joshua.klina@gmail.com"], ["encrypted_password", "$2a$12$KcvUs26.LS.nAdoD2z03zewPOFyYdN1HO63MoerSU91Hn38CjMy/u"], ["remember_token", "2e0b0b8b57abb39bdf1e013ae38181e767e496b6"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 274ms (ActiveRecord: 14.1ms | Allocations: 6481)
+
+
+Started GET "/" for ::1 at 2020-02-28 15:01:30 -0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "2e0b0b8b57abb39bdf1e013ae38181e767e496b6"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms | Allocations: 1121)
+
+
+Started GET "/users/1" for ::1 at 2020-02-28 15:01:30 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  Rendered users/show.haml within layouts/application (Duration: 2.6ms | Allocations: 2947)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 6289)
+
+
+Started GET "/users/1" for ::1 at 2020-02-28 15:11:07 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  Rendered users/show.haml within layouts/application (Duration: 285.3ms | Allocations: 129085)
+Completed 500 Internal Server Error in 292ms (ActiveRecord: 1.4ms | Allocations: 130887)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `each' for #<#<Class:0x00007fb4dee2c7d8>:0x00007fb4dde22f40>):
+    1: %h3= @user.email
+    2: %h4= "Posts"
+    3: - @user.posts each do |post|
+    4:   %p post.body
+  
+app/views/users/show.haml:3
+Started GET "/users/1" for ::1 at 2020-02-28 15:11:22 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  Rendered users/show.haml within layouts/application (Duration: 6.3ms | Allocations: 4216)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms | Allocations: 5887)
+
+
+  
+ActionView::Template::Error (undefined method `posts' for #<User:0x00007fb4dece01e0>):
+    1: %h3= @user.email
+    2: %h4= "Posts"
+    3: - @user.posts.each do |post|
+    4:   %p post.body
+  
+app/views/users/show.haml:3
+Started GET "/users/1" for ::1 at 2020-02-28 15:12:02 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:3
+  Rendered users/show.haml within layouts/application (Duration: 25.4ms | Allocations: 6689)
+Completed 200 OK in 51ms (Views: 24.8ms | ActiveRecord: 14.1ms | Allocations: 17331)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 15:34:40 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/posts/new"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/1/" for ::1 at 2020-02-28 15:37:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  Rendered users/show.haml within layouts/application (Duration: 1.9ms | Allocations: 2517)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 12.2ms | Allocations: 11734)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %h3= @user.email
+%h4= "Posts"
+- @user.posts.each do |post|
+  %p post.body
+
+= link_to "New Post" user_posts_path(@user)
+
+
+):
+1:    %h3= @user.email
+2:    %h4= "Posts"
+3:    - @user.posts.each do |post|
+4:      %p post.body
+5:    
+6:    = link_to "New Post" user_posts_path(@user)
+  
+app/views/users/show.haml:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/show.haml:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/show.haml:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/show.haml:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/show.haml:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/show.haml:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/1/" for ::1 at 2020-02-28 15:37:52 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:3
+  Rendered users/show.haml within layouts/application (Duration: 15.6ms | Allocations: 3946)
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 3.4ms | Allocations: 7521)
+
+
+Started GET "/users/1/posts" for ::1 at 2020-02-28 15:37:55 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/posts"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/1/posts" for ::1 at 2020-02-28 15:38:28 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/posts"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/1/" for ::1 at 2020-02-28 15:38:32 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:3
+  Rendered users/show.haml within layouts/application (Duration: 175.8ms | Allocations: 67663)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 0.7ms | Allocations: 69335)
+
+
+  
+ActionView::Template::Error (undefined method `new_user_posts_path' for #<#<Class:0x00007fb4dee6e548>:0x00007fb4dee6cce8>
+Did you mean?  new_user_post_path
+               new_user_post_url):
+    3: - @user.posts.each do |post|
+    4:   %p post.body
+    5: 
+    6: = link_to "New Post", new_user_posts_path(@user)
+  
+app/views/users/show.haml:6
+Started GET "/users/1/" for ::1 at 2020-02-28 15:38:42 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:3
+  Rendered users/show.haml within layouts/application (Duration: 3.7ms | Allocations: 2565)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.9ms | Allocations: 6150)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 15:38:44 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.6ms | Allocations: 3753)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/posts_controller.rb:4:in `new'
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 15:39:12 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+Completed 406 Not Acceptable in 40ms (ActiveRecord: 10.4ms | Allocations: 15156)
+
+
+  
+ActionController::MissingExactTemplate (PostsController#new is missing a template for request formats: text/html):
+  
+actionpack (6.0.2.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.2.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.2.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.2.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+clearance (2.1.0) lib/clearance/rack_session.rb:23:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 15:40:10 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 161.8ms | Allocations: 66741)
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 0.3ms | Allocations: 68580)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for #<#<Class:0x00007fb4dd4c3210>:0x00007fb4dd4c1550>
+Did you mean?  simple_format):
+    1: %h3 Create Post
+    2: = simple_form_for @post do |f|
+    3:   = f.input :body
+  
+app/views/posts/new.haml:2
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 15:40:36 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 243.1ms | Allocations: 81414)
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 13.2ms | Allocations: 99452)
+
+
+  
+ActionView::Template::Error (undefined method `posts_path' for #<#<Class:0x00007ff339dc43d8>:0x00007ff339dcea68>):
+    1: %h3 Create Post
+    2: = simple_form_for @post do |f|
+    3:   = f.input :body
+  
+app/views/posts/new.haml:2
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 15:40:58 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 21.4ms | Allocations: 6643)
+Completed 200 OK in 189ms (Views: 186.4ms | ActiveRecord: 0.3ms | Allocations: 293547)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 15:41:08 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 7.1ms | Allocations: 4658)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 8247)
+
+
+Started POST "/users/1/posts" for ::1 at 2020-02-28 15:41:12 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"body"=>"hello!"}, "commit"=>"Create Post", "user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 1284)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/posts_controller.rb:9:in `create'
+Started POST "/users/1/posts" for ::1 at 2020-02-28 15:49:11 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"body"=>"hello!"}, "commit"=>"Create Post", "user_id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.4ms | Allocations: 12067)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/posts_controller.rb:10:in `create'
+Started POST "/users/1/posts" for ::1 at 2020-02-28 15:50:11 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"body"=>"hello!"}, "commit"=>"Create Post", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:11:in `create'
+  [1m[36mPost Create (6.7ms)[0m  [1m[32mINSERT INTO "posts" ("body", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["body", "hello!"], ["user_id", 1], ["created_at", "2020-02-28 22:50:11.260948"], ["updated_at", "2020-02-28 22:50:11.260948"]]
+  ↳ app/controllers/posts_controller.rb:11:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 41ms (ActiveRecord: 21.2ms | Allocations: 15156)
+
+
+Started GET "/users/1" for ::1 at 2020-02-28 15:50:11 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:3
+  Rendered users/show.haml within layouts/application (Duration: 4.0ms | Allocations: 2725)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.8ms | Allocations: 5991)
+
+
+Started GET "/users/1" for ::1 at 2020-02-28 15:53:04 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:3
+  Rendered users/show.haml within layouts/application (Duration: 14.5ms | Allocations: 7129)
+Completed 200 OK in 41ms (Views: 13.9ms | ActiveRecord: 12.7ms | Allocations: 18011)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 16:06:50 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 11.2ms | Allocations: 4673)
+Completed 200 OK in 46ms (Views: 18.2ms | ActiveRecord: 1.1ms | Allocations: 19002)
+
+
