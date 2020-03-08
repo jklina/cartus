@@ -1,4 +1,8 @@
-%h3 Create Post
-= simple_form_for [@user, @post] do |f|
-  = f.input :body
-  = f.submit
+.container.lg.mx-auto.px-5.h-screen.py-5
+  %h3.text-3xl.mb-4 New Post
+  = simple_form_for [@user, @post] do |f|
+    = f.input :body,
+      label: false,
+      placeholder: "What's up?",
+      input_html: { class: "bg-gray-200 border border-gray-500 text-indigo-800 p-3 rounded w-full outline-none" }
+    = f.submit "Create Post", class: "block w-full mt-4 py-2 border-2 border-indigo-800 rounded-lg text-indigo-800 font-bold bg-gray-300"
