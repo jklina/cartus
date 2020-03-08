@@ -1253,3 +1253,3081 @@ Processing by PostsController#new as HTML
 Completed 200 OK in 46ms (Views: 18.2ms | ActiveRecord: 1.1ms | Allocations: 19002)
 
 
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 16:42:37 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 76.3ms | Allocations: 14290)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/joshuaklina/Development/openbook/public/packs
+[Webpacker] Hash: 6317f1ce7779fe823f05
+Version: webpack 4.41.6
+Time: 4848ms
+Built at: 02/28/2020 4:42:44 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-816076e02cb32b5cdeec.js   1.52 MiB  application  [emitted] [immutable]  application
+js/application-816076e02cb32b5cdeec.js.map   1.63 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-816076e02cb32b5cdeec.js js/application-816076e02cb32b5cdeec.js.map
+[./app/javascript/css/application.css] 649 bytes {application} [built]
+[./app/javascript/packs/application.js] 733 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./app/javascript/css/application.css] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./app/javascript/css/application.css 1.44 MiB {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+Completed 200 OK in 8554ms (Views: 8499.2ms | ActiveRecord: 12.5ms | Allocations: 1486880)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 17:00:30 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 7.6ms | Allocations: 4666)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 23.0ms | ActiveRecord: 0.9ms | Allocations: 24339)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 20:06:10 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 10.4ms | Allocations: 4617)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 1.0ms | Allocations: 13234)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 20:06:23 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 8.1ms | Allocations: 4609)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 20.7ms | ActiveRecord: 0.4ms | Allocations: 13097)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 20:06:42 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 49.1ms | Allocations: 4613)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 59.4ms | ActiveRecord: 0.5ms | Allocations: 13126)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 20:07:09 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 6.7ms | Allocations: 4603)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.4ms | Allocations: 13108)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 20:08:08 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 6.6ms | Allocations: 4599)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.4ms | Allocations: 13242)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 20:08:20 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 7.7ms | Allocations: 4615)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.4ms | Allocations: 13258)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 20:12:29 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 6.6ms | Allocations: 4619)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "2e0b0b8b57abb39bdf1e013ae38181e767e496b6"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 32ms (Views: 28.5ms | ActiveRecord: 0.9ms | Allocations: 14796)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-02-28 20:13:43 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 7.1ms | Allocations: 4615)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "2e0b0b8b57abb39bdf1e013ae38181e767e496b6"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.8ms | Allocations: 14733)
+
+
+Started DELETE "/sign_out" for ::1 at 2020-02-28 20:13:47 -0700
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "2e0b0b8b57abb39bdf1e013ae38181e767e496b6"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "remember_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["updated_at", "2020-02-29 03:13:47.982244"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 12ms (ActiveRecord: 3.7ms | Allocations: 5726)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:13:47 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 4.4ms | Allocations: 1297)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1773)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 7389)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:14:22 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 2.0ms | Allocations: 926)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1371)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 10612)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:14:23 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 1.2ms | Allocations: 659)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 757)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 5232)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:14:59 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 3.1ms | Allocations: 926)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1371)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 10599)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:16:21 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 1.2ms | Allocations: 659)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 757)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 5228)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:16:32 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 2.0ms | Allocations: 926)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1371)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 10738)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:17:54 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 1.9ms | Allocations: 926)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1371)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 10612)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:20:58 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 2.6ms | Allocations: 926)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1372)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 46.8ms | ActiveRecord: 0.0ms | Allocations: 10776)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:21:37 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 1.6ms | Allocations: 928)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1380)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 10788)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:22:19 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 1.9ms | Allocations: 926)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1371)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 10749)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:22:29 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 2.1ms | Allocations: 926)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1371)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 10760)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:23:59 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/_form.html.erb (Duration: 1.6ms | Allocations: 926)
+  Rendered /Users/joshuaklina/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/clearance-2.1.0/app/views/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1371)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 10757)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:40:24 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.9ms | Allocations: 3439)
+  Rendered sessions/new.haml within layouts/application (Duration: 21.1ms | Allocations: 7588)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 31.7ms | ActiveRecord: 0.0ms | Allocations: 16860)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:42:52 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.4ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.1ms | Allocations: 5790)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 14978)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:44:23 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.1ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.4ms | Allocations: 5809)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 15005)
+
+
+Started GET "/sign_in" for ::1 at 2020-02-28 20:44:52 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.3ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 5.6ms | Allocations: 5797)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 14983)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 14:52:36 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 23.4ms | Allocations: 3432)
+  Rendered sessions/new.haml within layouts/application (Duration: 43.7ms | Allocations: 5808)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 123ms (Views: 118.0ms | ActiveRecord: 0.0ms | Allocations: 15025)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 14:59:46 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 6.5ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 11.3ms | Allocations: 6169)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.0ms | Allocations: 15367)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:00:18 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 8.7ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 16.4ms | Allocations: 6456)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 100ms (Views: 100.1ms | ActiveRecord: 0.0ms | Allocations: 15663)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:00:27 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 3432)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.6ms | Allocations: 6469)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms | Allocations: 15678)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:00:50 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 9.6ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 12.5ms | Allocations: 6470)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 15662)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:01:16 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 5.6ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.9ms | Allocations: 6475)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 15659)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:01:30 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 11.5ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 14.4ms | Allocations: 6480)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 15666)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:08:20 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.5ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.5ms | Allocations: 6484)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 40.0ms | ActiveRecord: 0.0ms | Allocations: 15682)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:08:44 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.2ms | Allocations: 3432)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.0ms | Allocations: 6498)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 15718)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:09:13 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.4ms | Allocations: 689)
+  Rendered sessions/new.haml within layouts/application (Duration: 1.9ms | Allocations: 806)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 5288)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:09:26 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.0ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.7ms | Allocations: 6487)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 15684)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:09:34 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 7.2ms | Allocations: 3426)
+  Rendered sessions/new.haml within layouts/application (Duration: 36.9ms | Allocations: 6487)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 78.0ms | ActiveRecord: 0.0ms | Allocations: 15693)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:10:49 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.2ms | Allocations: 699)
+  Rendered sessions/new.haml within layouts/application (Duration: 61.0ms | Allocations: 2853)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 68ms (Views: 67.0ms | ActiveRecord: 0.0ms | Allocations: 7518)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:10:56 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.0ms | Allocations: 697)
+  Rendered sessions/new.haml within layouts/application (Duration: 3.5ms | Allocations: 2825)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 7490)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:15:41 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.2ms | Allocations: 3440)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.9ms | Allocations: 6509)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 15726)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:15:54 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.9ms | Allocations: 3444)
+  Rendered sessions/new.haml within layouts/application (Duration: 12.9ms | Allocations: 6503)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 26.9ms | ActiveRecord: 0.0ms | Allocations: 15701)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:16:19 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 3469)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.0ms | Allocations: 6528)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 15732)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:16:47 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.5ms | Allocations: 3469)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.7ms | Allocations: 6528)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 15730)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:20:28 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.3ms | Allocations: 3469)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.3ms | Allocations: 6528)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.0ms | Allocations: 15720)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:21:26 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.9ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.5ms | Allocations: 6527)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 15735)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:21:57 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 3469)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.1ms | Allocations: 6528)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 15731)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:22:23 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 3475)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.1ms | Allocations: 6544)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 19.0ms | ActiveRecord: 0.0ms | Allocations: 15763)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:24:48 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.4ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.5ms | Allocations: 6539)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 15744)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:26:34 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.4ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.4ms | Allocations: 6545)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 15743)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:26:52 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.5ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.6ms | Allocations: 6545)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 15743)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:27:28 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.3ms | Allocations: 721)
+  Rendered sessions/new.haml within layouts/application (Duration: 1.7ms | Allocations: 838)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 5324)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:27:30 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.8ms | Allocations: 718)
+  Rendered sessions/new.haml within layouts/application (Duration: 2.3ms | Allocations: 835)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 5328)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:27:33 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.4ms | Allocations: 718)
+  Rendered sessions/new.haml within layouts/application (Duration: 2.3ms | Allocations: 1092)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 8222)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:28:06 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.5ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.8ms | Allocations: 6543)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 15733)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:28:42 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.4ms | Allocations: 3470)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.2ms | Allocations: 6545)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 15749)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:28:57 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 9.4ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 13.0ms | Allocations: 6543)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.0ms | Allocations: 15739)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:30:12 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 3469)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.5ms | Allocations: 6544)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 15752)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:30:22 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 3476)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.8ms | Allocations: 6563)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.0ms | Allocations: 15786)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:30:26 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.4ms | Allocations: 3469)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.3ms | Allocations: 6544)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 15746)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:43:59 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.2ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.2ms | Allocations: 6630)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 15840)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:44:25 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.9ms | Allocations: 6775)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms | Allocations: 15985)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:44:53 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.7ms | Allocations: 721)
+  Rendered sessions/new.haml within layouts/application (Duration: 2.4ms | Allocations: 838)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 5324)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:45:43 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.4ms | Allocations: 6776)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 15980)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:45:50 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.8ms | Allocations: 6776)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 15980)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:46:15 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.2ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.5ms | Allocations: 6781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 15975)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:46:27 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.1ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.2ms | Allocations: 6786)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 15986)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:46:39 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.0ms | Allocations: 6786)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 42.9ms | ActiveRecord: 0.0ms | Allocations: 16003)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:46:57 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 3474)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.9ms | Allocations: 6799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 16012)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:47:07 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.6ms | Allocations: 6786)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 15992)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:47:19 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 3468)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.5ms | Allocations: 6786)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 15990)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:50:20 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.1ms | Allocations: 3484)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.4ms | Allocations: 6800)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 16010)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:50:31 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.0ms | Allocations: 3269)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.0ms | Allocations: 6585)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 15799)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:50:52 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.1ms | Allocations: 3270)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.6ms | Allocations: 6586)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 19.0ms | ActiveRecord: 0.0ms | Allocations: 15770)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:51:03 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.4ms | Allocations: 3270)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.1ms | Allocations: 6586)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 15778)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:51:10 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.0ms | Allocations: 3269)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.0ms | Allocations: 6585)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms | Allocations: 15783)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:52:28 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 36.5ms | Allocations: 4120)
+  Rendered sessions/new.haml within layouts/application (Duration: 39.8ms | Allocations: 6959)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms | Allocations: 8520)
+
+
+  
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %h4 and nested within it.):
+    1: .m-auto.p-6.bg-indigo-100.rounded-lg
+    2:   %h4.text-center.text-indigo-800.text-2xl.pb-4 Login to Openbook
+    3:     = form_for :session, url: session_path do |form|
+    4:       .text-field.p-3
+    5:         -# = form.label :email, class: "text-indigo-800"
+    6:         = form.text_field :email, type: 'email', class: "bg-indigo-200 border-b-2 border-indigo-300 text-indigo-100 p-2 rounded"
+  
+app/views/sessions/_form.haml:3
+app/views/sessions/new.haml:6
+Started GET "/sign_in" for ::1 at 2020-03-01 15:53:28 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 3802)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.0ms | Allocations: 6677)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 15918)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:53:59 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.3ms | Allocations: 4023)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.3ms | Allocations: 6861)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 16061)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:54:32 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.9ms | Allocations: 4100)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.8ms | Allocations: 6938)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 16138)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:55:22 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.3ms | Allocations: 574)
+  Rendered sessions/new.haml within layouts/application (Duration: 1.8ms | Allocations: 691)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 5177)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:55:32 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.1ms | Allocations: 4243)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.8ms | Allocations: 7081)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 16295)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:56:15 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 4258)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.6ms | Allocations: 7096)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 16296)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:56:36 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.9ms | Allocations: 4262)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.8ms | Allocations: 7100)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 16300)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:58:41 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.4ms | Allocations: 2136)
+  Rendered sessions/new.haml within layouts/application (Duration: 4.5ms | Allocations: 4983)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 6558)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+     9:         -# = form.label :password, class: "text-indigo-800"
+    10:         = form.password_field :password, class: "bg-indigo-200 border-b-2 border-indigo-300 text-indigo-100 p-2 rounded"
+    11:   .m-auto.pb-6.px-6.bg-indigo-100.rounded-b-lg.bg-indigo-200
+    12:       .submit-field
+    13:         = form.submit
+    14:     .other-links
+    15:       - if Clearance.configuration.allow_sign_up?
+  
+app/views/sessions/_form.haml:12
+app/views/sessions/new.haml:6
+Started GET "/sign_in" for ::1 at 2020-03-01 15:58:47 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.1ms | Allocations: 4269)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.0ms | Allocations: 7116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 16338)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:59:51 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.1ms | Allocations: 574)
+  Rendered sessions/new.haml within layouts/application (Duration: 1.4ms | Allocations: 691)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 5173)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 15:59:53 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 4264)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.6ms | Allocations: 7102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 16306)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:00:18 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 4264)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.5ms | Allocations: 7102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 16302)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:00:34 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 4264)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.9ms | Allocations: 7102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms | Allocations: 16306)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:00:55 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.3ms | Allocations: 4264)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.3ms | Allocations: 7102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 16306)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:01:27 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 9.3ms | Allocations: 4610)
+  Rendered sessions/new.haml within layouts/application (Duration: 13.3ms | Allocations: 7449)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 9000)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %div.m-auto
+  .m-auto.pt-10.px-16.bg-indigo-100.rounded-t-lg
+    %h4.text-center.text-indigo-800.text-2xl.pb-4 Login to Openbook
+    = form_for :session, url: session_path do |form|
+      .text-field.p-3
+        -# = form.label :email, class: "text-indigo-800"
+        = form.text_field :email, type: 'email', class: "bg-indigo-200 border-b-2 border-indigo-300 text-indigo-100 p-2 rounded"
+      .password-field.p-3
+        -# = form.label :password, class: "text-indigo-800"
+        = form.password_field :password, class: "bg-indigo-200 border-b-2 border-indigo-300 text-indigo-100 p-2 rounded"
+      .submit-field
+        = form.submit, class: "block"
+  .m-auto.pb-10.px-16.bg-indigo-100.rounded-b-lg.bg-indigo-200
+    .other-links
+      - if Clearance.configuration.allow_sign_up?
+        = link_to t(".sign_up"), sign_up_path
+      = link_to t(".forgot_password"), new_password_path
+
+):
+1:    %div.m-auto
+2:      .m-auto.pt-10.px-16.bg-indigo-100.rounded-t-lg
+3:        %h4.text-center.text-indigo-800.text-2xl.pb-4 Login to Openbook
+4:        = form_for :session, url: session_path do |form|
+5:          .text-field.p-3
+6:            -# = form.label :email, class: "text-indigo-800"
+7:            = form.text_field :email, type: 'email', class: "bg-indigo-200 border-b-2 border-indigo-300 text-indigo-100 p-2 rounded"
+8:          .password-field.p-3
+9:            -# = form.label :password, class: "text-indigo-800"
+10:            = form.password_field :password, class: "bg-indigo-200 border-b-2 border-indigo-300 text-indigo-100 p-2 rounded"
+11:          .submit-field
+12:            = form.submit, class: "block"
+13:      .m-auto.pb-10.px-16.bg-indigo-100.rounded-b-lg.bg-indigo-200
+14:        .other-links
+15:          - if Clearance.configuration.allow_sign_up?
+16:            = link_to t(".sign_up"), sign_up_path
+17:          = link_to t(".forgot_password"), new_password_path
+  
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/new.haml:6
+Started GET "/sign_in" for ::1 at 2020-03-01 16:02:55 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.5ms | Allocations: 4616)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.5ms | Allocations: 7464)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 9025)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %div.m-auto
+  .m-auto.pt-10.px-16.bg-indigo-100.rounded-t-lg
+    %h4.text-center.text-indigo-800.text-2xl.pb-4 Login to Openbook
+    = form_for :session, url: session_path do |form|
+      .text-field.p-3
+        -# = form.label :email, class: "text-indigo-800"
+        = form.text_field :email, type: 'email', class: "bg-indigo-200 border-b-2 border-indigo-300 text-indigo-100 p-2 rounded"
+      .password-field.p-3
+        -# = form.label :password, class: "text-indigo-800"
+        = form.password_field :password, class: "bg-indigo-200 border-b-2 border-indigo-300 text-indigo-100 p-2 rounded"
+      .submit-field
+        = form.submit, input_html: { class: "block" }
+  .m-auto.pb-10.px-16.bg-indigo-100.rounded-b-lg.bg-indigo-200
+    .other-links
+      - if Clearance.configuration.allow_sign_up?
+        = link_to t(".sign_up"), sign_up_path
+      = link_to t(".forgot_password"), new_password_path
+
+):
+1:    %div.m-auto
+2:      .m-auto.pt-10.px-16.bg-indigo-100.rounded-t-lg
+3:        %h4.text-center.text-indigo-800.text-2xl.pb-4 Login to Openbook
+4:        = form_for :session, url: session_path do |form|
+5:          .text-field.p-3
+6:            -# = form.label :email, class: "text-indigo-800"
+7:            = form.text_field :email, type: 'email', class: "bg-indigo-200 border-b-2 border-indigo-300 text-indigo-100 p-2 rounded"
+8:          .password-field.p-3
+9:            -# = form.label :password, class: "text-indigo-800"
+10:            = form.password_field :password, class: "bg-indigo-200 border-b-2 border-indigo-300 text-indigo-100 p-2 rounded"
+11:          .submit-field
+12:            = form.submit, input_html: { class: "block" }
+13:      .m-auto.pb-10.px-16.bg-indigo-100.rounded-b-lg.bg-indigo-200
+14:        .other-links
+15:          - if Clearance.configuration.allow_sign_up?
+16:            = link_to t(".sign_up"), sign_up_path
+17:          = link_to t(".forgot_password"), new_password_path
+  
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_form.haml:12: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/new.haml:6
+Started GET "/sign_in" for ::1 at 2020-03-01 16:05:39 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 4203)
+  Rendered sessions/new.haml within layouts/application (Duration: 12.4ms | Allocations: 7050)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 16260)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:06:58 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.9ms | Allocations: 4195)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.9ms | Allocations: 7033)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 16237)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:09:13 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.0ms | Allocations: 4196)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.4ms | Allocations: 7034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 16230)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:15:58 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 4196)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.9ms | Allocations: 7034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 29.0ms | ActiveRecord: 0.0ms | Allocations: 16234)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:16:18 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 5.1ms | Allocations: 4196)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.7ms | Allocations: 7034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 16244)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:16:31 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.8ms | Allocations: 4203)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.1ms | Allocations: 7051)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms | Allocations: 16280)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:16:49 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.0ms | Allocations: 4196)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.3ms | Allocations: 7034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 16232)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:17:05 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.9ms | Allocations: 4196)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.0ms | Allocations: 7034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 16236)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:17:15 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.9ms | Allocations: 4196)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.6ms | Allocations: 7034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 16238)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:17:20 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.2ms | Allocations: 4195)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.9ms | Allocations: 7033)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 16239)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:17:32 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.1ms | Allocations: 4196)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.0ms | Allocations: 7034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 16240)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:17:38 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 4196)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.0ms | Allocations: 7034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 16238)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:18:38 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.4ms | Allocations: 4196)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.4ms | Allocations: 7034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms | Allocations: 16230)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:18:46 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 22.9ms | Allocations: 504)
+  Rendered sessions/new.haml within layouts/application (Duration: 23.3ms | Allocations: 621)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.0ms | Allocations: 5107)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:18:47 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.4ms | Allocations: 501)
+  Rendered sessions/new.haml within layouts/application (Duration: 1.9ms | Allocations: 618)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 5099)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:18:53 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.4ms | Allocations: 501)
+  Rendered sessions/new.haml within layouts/application (Duration: 2.0ms | Allocations: 618)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 5101)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:19:07 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.3ms | Allocations: 4203)
+  Rendered sessions/new.haml within layouts/application (Duration: 9.8ms | Allocations: 7051)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms | Allocations: 16264)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:19:18 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.0ms | Allocations: 4195)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.8ms | Allocations: 7033)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 16239)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:19:58 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 6.8ms | Allocations: 4196)
+  Rendered sessions/new.haml within layouts/application (Duration: 9.6ms | Allocations: 7034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 16242)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:20:32 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 4203)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.7ms | Allocations: 7041)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 16249)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:20:54 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.5ms | Allocations: 4202)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.4ms | Allocations: 7040)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 16244)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:22:29 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.0ms | Allocations: 504)
+  Rendered sessions/new.haml within layouts/application (Duration: 1.4ms | Allocations: 621)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 5105)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:22:34 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 4202)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.4ms | Allocations: 7040)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 16238)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:23:01 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 5.0ms | Allocations: 4202)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.7ms | Allocations: 7040)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.0ms | Allocations: 16246)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:23:25 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.5ms | Allocations: 4209)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.2ms | Allocations: 7057)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 16272)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:24:08 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 4205)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.3ms | Allocations: 7043)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 16241)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:24:20 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.3ms | Allocations: 4205)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.2ms | Allocations: 7043)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 16248)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:24:37 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 4202)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.9ms | Allocations: 7040)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 16246)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:27:06 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.5ms | Allocations: 4144)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.4ms | Allocations: 6982)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.9ms | ActiveRecord: 0.0ms | Allocations: 16190)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:27:11 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.3ms | Allocations: 4144)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.0ms | Allocations: 6982)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 16178)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:27:19 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 4143)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.0ms | Allocations: 6981)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 16177)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-01 16:28:45 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.5ms | Allocations: 4144)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.1ms | Allocations: 6982)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 61.6ms | ActiveRecord: 0.0ms | Allocations: 16179)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:05:06 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 56.8ms | Allocations: 4151)
+  Rendered sessions/new.haml within layouts/application (Duration: 102.3ms | Allocations: 6999)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 228ms (Views: 214.2ms | ActiveRecord: 0.0ms | Allocations: 16207)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:05:21 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 14.0ms | Allocations: 4145)
+  Rendered sessions/new.haml within layouts/application (Duration: 22.1ms | Allocations: 6983)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 56.7ms | ActiveRecord: 0.0ms | Allocations: 16179)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:05:24 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 2.3ms | Allocations: 504)
+  Rendered sessions/new.haml within layouts/application (Duration: 2.9ms | Allocations: 621)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 5107)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:06:08 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 8.3ms | Allocations: 4145)
+  Rendered sessions/new.haml within layouts/application (Duration: 12.8ms | Allocations: 6983)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 36.8ms | ActiveRecord: 0.0ms | Allocations: 16177)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:07:38 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 7.8ms | Allocations: 4157)
+  Rendered sessions/new.haml within layouts/application (Duration: 13.5ms | Allocations: 6995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms | Allocations: 16189)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:07:42 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.5ms | Allocations: 504)
+  Rendered sessions/new.haml within layouts/application (Duration: 2.2ms | Allocations: 621)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 129.9ms | ActiveRecord: 0.0ms | Allocations: 5115)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:08:05 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 5.9ms | Allocations: 4163)
+  Rendered sessions/new.haml within layouts/application (Duration: 9.0ms | Allocations: 7011)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 16236)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:08:13 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.6ms | Allocations: 4157)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.2ms | Allocations: 6995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms | Allocations: 16191)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:08:21 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.1ms | Allocations: 4157)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.6ms | Allocations: 6995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 16189)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:08:56 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 4157)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.1ms | Allocations: 6995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 16193)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:10:03 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 4106)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.5ms | Allocations: 6944)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 16144)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:10:30 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 5.7ms | Allocations: 4116)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.8ms | Allocations: 6954)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 16162)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:10:35 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.6ms | Allocations: 4126)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.5ms | Allocations: 6964)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.0ms | Allocations: 16162)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:13:19 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.7ms | Allocations: 4192)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.1ms | Allocations: 7030)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 16248)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:14:30 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 5.0ms | Allocations: 3977)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.1ms | Allocations: 6825)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 16042)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:14:38 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.5ms | Allocations: 3978)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.2ms | Allocations: 6816)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 16012)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:16:13 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 6.5ms | Allocations: 4200)
+  Rendered sessions/new.haml within layouts/application (Duration: 10.3ms | Allocations: 7038)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 16234)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:17:40 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 5.4ms | Allocations: 4206)
+  Rendered sessions/new.haml within layouts/application (Duration: 9.5ms | Allocations: 7044)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 22.8ms | ActiveRecord: 0.0ms | Allocations: 16240)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:17:50 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 5.9ms | Allocations: 4206)
+  Rendered sessions/new.haml within layouts/application (Duration: 9.9ms | Allocations: 7044)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 26.9ms | ActiveRecord: 0.0ms | Allocations: 16245)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:18:36 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 7.8ms | Allocations: 4206)
+  Rendered sessions/new.haml within layouts/application (Duration: 14.3ms | Allocations: 7044)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.0ms | Allocations: 16244)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:18:57 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 4205)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.7ms | Allocations: 7043)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 16235)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:19:07 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 6.8ms | Allocations: 4205)
+  Rendered sessions/new.haml within layouts/application (Duration: 16.7ms | Allocations: 7046)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 57.9ms | ActiveRecord: 0.0ms | Allocations: 16244)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:19:45 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.4ms | Allocations: 4212)
+  Rendered sessions/new.haml within layouts/application (Duration: 12.7ms | Allocations: 7060)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 16271)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:19:59 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 4206)
+  Rendered sessions/new.haml within layouts/application (Duration: 12.6ms | Allocations: 7044)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 25.1ms | ActiveRecord: 0.0ms | Allocations: 16242)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:20:19 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.5ms | Allocations: 4206)
+  Rendered sessions/new.haml within layouts/application (Duration: 8.2ms | Allocations: 7044)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 16244)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:21:30 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 4204)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.0ms | Allocations: 7042)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 16305)
+
+
+Started GET "/" for ::1 at 2020-03-03 08:21:34 -0700
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 196)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:21:34 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 0.8ms | Allocations: 525)
+  Rendered sessions/new.haml within layouts/application (Duration: 1.1ms | Allocations: 642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 5153)
+
+
+Started GET "/users/1/" for ::1 at 2020-03-03 08:21:44 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:3
+  Rendered users/show.haml within layouts/application (Duration: 21.3ms | Allocations: 7203)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 117ms (Views: 23.8ms | ActiveRecord: 46.9ms | Allocations: 20648)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:24:51 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 1.1ms | Allocations: 531)
+  Rendered sessions/new.haml within layouts/application (Duration: 1.4ms | Allocations: 648)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 5167)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:25:22 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.7ms | Allocations: 4206)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.0ms | Allocations: 7044)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 16312)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:25:31 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.0ms | Allocations: 4206)
+  Rendered sessions/new.haml within layouts/application (Duration: 7.0ms | Allocations: 7044)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 49.2ms | ActiveRecord: 0.0ms | Allocations: 16313)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:25:39 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 0.9ms | Allocations: 525)
+  Rendered sessions/new.haml within layouts/application (Duration: 1.2ms | Allocations: 642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 5139)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:25:44 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 9.2ms | Allocations: 4212)
+  Rendered sessions/new.haml within layouts/application (Duration: 11.8ms | Allocations: 7056)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 16317)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:25:46 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 0.9ms | Allocations: 525)
+  Rendered sessions/new.haml within layouts/application (Duration: 1.2ms | Allocations: 642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 5159)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:25:57 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 3.8ms | Allocations: 4205)
+  Rendered sessions/new.haml within layouts/application (Duration: 6.9ms | Allocations: 7043)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 16301)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:26:15 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 4.7ms | Allocations: 4200)
+  Rendered sessions/new.haml within layouts/application (Duration: 9.3ms | Allocations: 7038)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 16290)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-03 08:26:21 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 11.0ms | Allocations: 4200)
+  Rendered sessions/new.haml within layouts/application (Duration: 14.4ms | Allocations: 7038)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms | Allocations: 16298)
+
+
+Started GET "/" for ::1 at 2020-03-07 14:49:41 -0700
+Processing by HomeController#index as HTML
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 30ms (ActiveRecord: 0.0ms | Allocations: 191)
+
+
+Started GET "/sign_in" for ::1 at 2020-03-07 14:49:42 -0700
+Processing by Clearance::SessionsController#new as HTML
+  Rendering sessions/new.haml within layouts/application
+  Rendered sessions/_form.haml (Duration: 92.1ms | Allocations: 525)
+  Rendered sessions/new.haml within layouts/application (Duration: 134.0ms | Allocations: 643)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 344ms (Views: 341.2ms | ActiveRecord: 0.0ms | Allocations: 5155)
+
+
+Started POST "/session" for ::1 at 2020-03-07 14:50:52 -0700
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"joshua.klina@gmail.com", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joshua.klina@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 359ms (ActiveRecord: 8.6ms | Allocations: 1816)
+
+
+Started GET "/" for ::1 at 2020-03-07 14:50:53 -0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 41ms (ActiveRecord: 1.3ms | Allocations: 1024)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 14:50:53 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:3
+  Rendered users/show.haml within layouts/application (Duration: 133.6ms | Allocations: 2647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 343ms (Views: 317.2ms | ActiveRecord: 3.0ms | Allocations: 9344)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 14:57:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 68.9ms | Allocations: 2884)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 336ms (Views: 313.5ms | ActiveRecord: 3.5ms | Allocations: 13512)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 14:57:49 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 14.7ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 113ms (Views: 104.4ms | ActiveRecord: 1.4ms | Allocations: 6902)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 14:57:59 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 37.3ms | Allocations: 2868)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 154ms (Views: 140.4ms | ActiveRecord: 5.3ms | Allocations: 13360)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 14:59:23 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 35.1ms | Allocations: 2866)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 172ms (Views: 146.9ms | ActiveRecord: 1.3ms | Allocations: 13247)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:02:37 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 6.1ms | Allocations: 2877)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 1.4ms | Allocations: 13265)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:03:02 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 5.3ms | Allocations: 2870)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 1.8ms | Allocations: 13404)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:03:04 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 2.0ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 1.0ms | Allocations: 6798)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:03:09 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 4.6ms | Allocations: 2870)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 30ms (Views: 24.3ms | ActiveRecord: 1.1ms | Allocations: 13398)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:04:05 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 3.9ms | Allocations: 2878)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 1.1ms | Allocations: 13404)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:04:18 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 6.0ms | Allocations: 2878)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 1.0ms | Allocations: 13394)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:04:29 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 9.4ms | Allocations: 2884)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.9ms | Allocations: 13410)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:05:16 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 4.4ms | Allocations: 2884)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.9ms | Allocations: 13404)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:10:45 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 6.1ms | Allocations: 2882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 1.0ms | Allocations: 13889)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:11:16 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 5.4ms | Allocations: 2895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 1.0ms | Allocations: 13909)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:11:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 4.3ms | Allocations: 2890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 1.0ms | Allocations: 13898)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:11:48 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 9.6ms | Allocations: 2890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.9ms | Allocations: 13886)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:12:29 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 3.9ms | Allocations: 2884)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 1.1ms | Allocations: 13878)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:13:05 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 2.1ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 1.0ms | Allocations: 6802)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:13:06 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 7.0ms | Allocations: 2882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 1.2ms | Allocations: 13883)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:14:45 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 2.3ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 1.0ms | Allocations: 6804)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:14:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 11.5ms | Allocations: 2882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 1.1ms | Allocations: 13881)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:15:17 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 4.1ms | Allocations: 2882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 0.9ms | Allocations: 13883)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:15:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 4.4ms | Allocations: 2882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.9ms | Allocations: 13901)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:15:30 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 9.6ms | Allocations: 2884)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 1.1ms | Allocations: 13879)
+
+
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "joshua.klina@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (10.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "first_name" = $2, "last_name" = $3 WHERE "users"."id" = $4[0m  [["updated_at", "2020-03-07 22:16:42.666894"], ["first_name", "Josh"], ["last_name", "Klina"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users/1" for ::1 at 2020-03-07 15:17:26 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 15.7ms | Allocations: 5435)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 58ms (Views: 27.8ms | ActiveRecord: 13.9ms | Allocations: 19067)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:17:36 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 4.9ms | Allocations: 2889)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 1.0ms | Allocations: 13888)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:18:00 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:4
+  Rendered users/show.haml within layouts/application (Duration: 5.5ms | Allocations: 3033)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.9ms | Allocations: 14042)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:19:12 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 5.0ms | Allocations: 3516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.9ms | Allocations: 14517)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:19:31 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 6.5ms | Allocations: 3506)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 1.3ms | Allocations: 14519)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:28:38 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 5.4ms | Allocations: 3674)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 37ms (Views: 32.2ms | ActiveRecord: 2.1ms | Allocations: 14827)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:28:39 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 2.5ms | Allocations: 794)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 1.6ms | Allocations: 6803)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:28:59 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 10.9ms | Allocations: 3655)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 1.5ms | Allocations: 14664)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:29:28 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 4.2ms | Allocations: 3643)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 1.4ms | Allocations: 14640)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:31:34 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 6.5ms | Allocations: 3864)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 32ms (Views: 28.5ms | ActiveRecord: 1.3ms | Allocations: 14865)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:31:49 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 4.1ms | Allocations: 3863)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 1.2ms | Allocations: 14874)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:32:02 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 4.8ms | Allocations: 3863)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.9ms | Allocations: 14874)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:32:08 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 5.4ms | Allocations: 3863)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 1.0ms | Allocations: 14878)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:32:19 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 5.3ms | Allocations: 3875)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 1.0ms | Allocations: 14888)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:32:28 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 3.9ms | Allocations: 3869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.9ms | Allocations: 14863)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:33:42 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 4.6ms | Allocations: 3879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 1.0ms | Allocations: 14868)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:33:48 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 4.8ms | Allocations: 3879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 1.0ms | Allocations: 14874)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:33:57 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 4.4ms | Allocations: 3885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.9ms | Allocations: 14880)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:34:11 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 4.0ms | Allocations: 3885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.9ms | Allocations: 14884)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:34:37 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 4.7ms | Allocations: 3891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 1.0ms | Allocations: 14884)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:35:29 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:6
+  Rendered users/show.haml within layouts/application (Duration: 5.4ms | Allocations: 3892)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 0.9ms | Allocations: 14908)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:36:06 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 4.7ms | Allocations: 4140)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 1.1ms | Allocations: 15153)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:43:09 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 6.9ms | Allocations: 4376)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 34ms (Views: 28.6ms | ActiveRecord: 2.2ms | Allocations: 15496)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:43:40 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 5.6ms | Allocations: 4370)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 1.4ms | Allocations: 15373)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:43:59 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 2.4ms | Allocations: 794)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 1.4ms | Allocations: 6817)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:44:00 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 5.7ms | Allocations: 4454)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 1.4ms | Allocations: 15459)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:44:31 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 12.6ms | Allocations: 4455)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 1.6ms | Allocations: 15456)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:44:54 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 11.6ms | Allocations: 4461)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 1.4ms | Allocations: 15456)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:45:32 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 13.0ms | Allocations: 4461)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 67ms (Views: 63.2ms | ActiveRecord: 1.0ms | Allocations: 15475)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:46:54 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 5.9ms | Allocations: 4485)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.9ms | Allocations: 15513)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:47:28 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 5.1ms | Allocations: 4479)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.9ms | Allocations: 15490)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:47:56 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 5.5ms | Allocations: 4479)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.9ms | Allocations: 15478)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:49:02 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 4.5ms | Allocations: 4485)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.9ms | Allocations: 15474)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:49:52 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 399.9ms | Allocations: 79139)
+Completed 500 Internal Server Error in 404ms (ActiveRecord: 0.5ms | Allocations: 80806)
+
+
+  
+ActionView::Template::Error (undefined method `edit_user_post_path' for #<#<Class:0x00007fd3308790f0>:0x00007fd3308837a8>
+Did you mean?  new_user_post_path):
+     8:         .bg-gray-300.px-5.py-8.border-t.border-r.border-l.border-dotted.border-gray-600.rounded-t
+     9:           %p= post.body
+    10:         .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600
+    11:           = link_to "Edit", edit_user_post_path([@user, post])
+    12: 
+    13:     = link_to "New Post", new_user_post_path(@user)
+  
+app/views/users/show.haml:11
+app/views/users/show.haml:7
+Started GET "/users/1" for ::1 at 2020-03-07 15:50:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 12.1ms | Allocations: 5513)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 45ms (Views: 19.8ms | ActiveRecord: 13.9ms | Allocations: 23341)
+
+
+Started GET "/users/1/posts/new" for ::1 at 2020-03-07 15:50:54 -0700
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `new'
+  Rendering posts/new.haml within layouts/application
+  Rendered posts/new.haml within layouts/application (Duration: 12.6ms | Allocations: 4715)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.5ms | Allocations: 11299)
+
+
+Started POST "/users/1/posts" for ::1 at 2020-03-07 15:51:01 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"body"=>"This is another new post!!"}, "commit"=>"Create Post", "user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:10:in `create'
+  [1m[36mPost Create (9.3ms)[0m  [1m[32mINSERT INTO "posts" ("body", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["body", "This is another new post!!"], ["user_id", 1], ["created_at", "2020-03-07 22:51:01.181497"], ["updated_at", "2020-03-07 22:51:01.181497"]]
+  ↳ app/controllers/posts_controller.rb:10:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:10:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 20ms (ActiveRecord: 11.8ms | Allocations: 3372)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:51:01 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 2.1ms | Allocations: 960)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.8ms | Allocations: 6979)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:51:30 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 9.3ms | Allocations: 4851)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 29ms (Views: 25.9ms | ActiveRecord: 1.0ms | Allocations: 15854)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:52:07 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 6.4ms | Allocations: 4844)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 1.1ms | Allocations: 15845)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:52:34 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 5.8ms | Allocations: 4861)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 1.0ms | Allocations: 15856)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:52:52 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 9.4ms | Allocations: 4868)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 41ms (Views: 37.1ms | ActiveRecord: 0.9ms | Allocations: 15867)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:56:37 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 11.7ms | Allocations: 4876)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 57ms (Views: 53.1ms | ActiveRecord: 1.0ms | Allocations: 15886)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:56:54 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 6.2ms | Allocations: 5155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 1.0ms | Allocations: 15982)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:57:25 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:7
+  Rendered users/show.haml within layouts/application (Duration: 6.4ms | Allocations: 5147)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 1.1ms | Allocations: 15968)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:57:49 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:8
+  Rendered users/show.haml within layouts/application (Duration: 11.2ms | Allocations: 5142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.9ms | Allocations: 15963)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:57:57 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:8
+  Rendered users/show.haml within layouts/application (Duration: 5.9ms | Allocations: 5149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 1.0ms | Allocations: 15970)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:58:16 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:8
+  Rendered users/show.haml within layouts/application (Duration: 5.6ms | Allocations: 5134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.9ms | Allocations: 15955)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 15:58:30 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:8
+  Rendered users/show.haml within layouts/application (Duration: 5.6ms | Allocations: 5133)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.9ms | Allocations: 15954)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:04:49 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 7.6ms | Allocations: 5390)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 2.2ms | Allocations: 16334)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:05:40 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 35.8ms | Allocations: 5369)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 1.4ms | Allocations: 16206)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:06:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 13.0ms | Allocations: 5372)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 1.4ms | Allocations: 16199)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:06:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 3.7ms | Allocations: 1252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 1.4ms | Allocations: 7087)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:06:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 4.9ms | Allocations: 5093)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 1.3ms | Allocations: 16098)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:07:06 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 11.0ms | Allocations: 5094)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 1.3ms | Allocations: 16089)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:07:17 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 5.0ms | Allocations: 5094)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.8ms | Allocations: 16099)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:13:06 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 223.3ms | Allocations: 79800)
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 2.0ms | Allocations: 81584)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_user_post_path' for #<#<Class:0x00007fd330981b00>:0x00007fd330980228>):
+    12:             %p= post.body
+    13:           .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.justify-between
+    14:             = link_to "Edit", edit_user_post_path([@user, post]), class: "text-sm"
+    15:             = link_to "Delete", destroy_user_post_path([@user, post]), class: "text-sm text-red-800"
+  
+app/views/users/show.haml:15
+app/views/users/show.haml:9
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/joshuaklina/.rbenv/versions/2.6.5/bin/rake:23)
+Started GET "/users/1" for ::1 at 2020-03-07 16:40:51 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 6.5ms | Allocations: 5376)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 2.2ms | Allocations: 16512)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:42:01 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 6.0ms | Allocations: 5575)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 1.4ms | Allocations: 16584)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:42:36 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 6.6ms | Allocations: 5640)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 1.2ms | Allocations: 16657)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:42:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 2.8ms | Allocations: 1179)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 1.5ms | Allocations: 7188)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:42:57 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 6.2ms | Allocations: 5644)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 1.3ms | Allocations: 16653)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:50:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 10.9ms | Allocations: 7274)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.8ms | Allocations: 9059)
+
+
+  
+ActionView::Template::Error (undefined method `to_sentence' for Fri, 28 Feb 2020 22:50:11 UTC +00:00:Time):
+     9:       - @user.posts.each do |post|
+    10:         .mb-4
+    11:           .bg-gray-300.px-5.py-6.border-t.border-r.border-l.border-dotted.border-gray-600.rounded-t
+    12:             %span.block.text-xs.mb-3= post.created_at.to_sentence
+    13:             %p= post.body
+    14:           .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.justify-between
+    15:             = link_to "Edit", edit_user_post_path([@user, post]), class: "text-sm"
+  
+app/views/users/show.haml:12
+app/views/users/show.haml:9
+Started GET "/users/1" for ::1 at 2020-03-07 16:51:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 10.4ms | Allocations: 7240)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.2ms | Allocations: 8913)
+
+
+  
+ActionView::Template::Error (undefined method `time_ago_in_words' for Fri, 28 Feb 2020 22:50:11 UTC +00:00:Time):
+     9:       - @user.posts.each do |post|
+    10:         .mb-4
+    11:           .bg-gray-300.px-5.py-6.border-t.border-r.border-l.border-dotted.border-gray-600.rounded-t
+    12:             %span.block.text-xs.mb-3= post.created_at.time_ago_in_words
+    13:             %p= post.body
+    14:           .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.justify-between
+    15:             = link_to "Edit", edit_user_post_path([@user, post]), class: "text-sm"
+  
+app/views/users/show.haml:12
+app/views/users/show.haml:9
+Started GET "/users/1" for ::1 at 2020-03-07 16:51:58 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 8.0ms | Allocations: 5750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 1.7ms | Allocations: 16774)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:52:52 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 14.0ms | Allocations: 5724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 1.4ms | Allocations: 16735)
+
+
+Started GET "/users/1" for ::1 at 2020-03-07 16:53:22 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.haml within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.haml:9
+  Rendered users/show.haml within layouts/application (Duration: 29.5ms | Allocations: 5728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "993a36f1976d6c9055354475be849b8dffd7e69b"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.haml:16
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 1.3ms | Allocations: 16749)
+
+

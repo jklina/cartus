@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Openbook
+    = csrf_meta_tags
+    = csp_meta_tag
+    = javascript_pack_tag 'application', media: 'all'
+    = stylesheet_link_tag 'application', media: 'all'
+  %body.bg-gray-300.text-gray-700
+    %header.flex.text-white.px-2.py-3.justify-between.bg-indigo-900
+      %h1.text-2xl= link_to "Openbook", root_path
+      %nav.flex.items-center
+        %ul.block
+          %li
+            - if signed_in?
+              = link_to "Sign Out",
+                sign_out_path,
+                method: :delete
+            -else
+              = link_to "Sign in", sign_in_path, class: "block"
+    = yield
+    %footer.flex.bg-gray-900.text-white.px-2.py-3.justify-between.bg-indigo-900
+      .p This is the footer.
