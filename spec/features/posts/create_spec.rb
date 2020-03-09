@@ -5,7 +5,7 @@ describe "creating a post", type: :feature do
     user = create(:user)
     visit new_user_post_path(user)
 
-    fill_in("Body", with: "This is my post.")
+    fill_in("post_body", with: "This is my post.")
     click_button "Create Post"
 
     expect(page).to have_current_path(user_path(user))
