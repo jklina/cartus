@@ -8,6 +8,17 @@
     .mb-4
       - @posts.each do |post|
         .mb-4
+        - if post.images.present?
+          %p= image_tag(post.images.first.variant(resize_to_fill: [1000, 220, { gravity: "Center" }]), class: "rounded-t")
+          .bg-gray-300.px-5.py-5.border-r.border-l.border-dotted.border-gray-600
+            %span.block.text-xs.mb-3= "#{time_ago_in_words(post.created_at)} ago"
+            %p= post.body
+          .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.justify-between
+            = link_to "Edit", edit_user_post_path(@user, post), class: "text-sm"
+            = link_to "Delete", user_post_path(@user, post), class: "text-sm text-red-800", method: :delete
+
+
+        - else
           .bg-gray-300.px-5.py-5.border-t.border-r.border-l.border-dotted.border-gray-600.rounded-t
             %span.block.text-xs.mb-3= "#{time_ago_in_words(post.created_at)} ago"
             %p= post.body

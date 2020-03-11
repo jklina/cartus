@@ -12,6 +12,7 @@ gem 'clearance'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'webpacker', '~> 4.x'
+gem 'image_processing'
 
 group :test do
   gem 'shoulda-matchers'
