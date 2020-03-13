@@ -1,0 +1,17 @@
+.mb-4
+- if post.images.present?
+  .post-photos{ data: { "preview-image": url_for(post.preview_image) } }
+  .bg-gray-300.px-5.py-5.border-r.border-l.border-dotted.border-gray-600
+    %span.block.text-xs.mb-3= "#{time_ago_in_words(post.created_at)} ago"
+    %p= post.body
+  .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.justify-between
+    = link_to "Edit", edit_user_post_path(@user, post), class: "text-sm"
+    = link_to "Delete", user_post_path(@user, post), class: "text-sm text-red-800", method: :delete
+- else
+  .bg-gray-300.px-5.py-5.border-t.border-r.border-l.border-dotted.border-gray-600.rounded-t
+    %span.block.text-xs.mb-3= "#{time_ago_in_words(post.created_at)} ago"
+    %p= post.body
+  .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.justify-between
+    = link_to "Edit", edit_user_post_path(@user, post), class: "text-sm"
+    = link_to "Delete", user_post_path(@user, post), class: "text-sm text-red-800", method: :delete
+

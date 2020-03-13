@@ -21,4 +21,8 @@ class Post < ApplicationRecord
   belongs_to :user
 
   has_many_attached :images
+
+  def preview_image
+    images.first.variant(resize_to_fill: [1000, 220, { gravity: "Center" }])
+  end
 end
