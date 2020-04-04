@@ -1,6 +1,6 @@
 .mb-4
 - if post.images.present?
-  .post-photos{ data: { "preview-image": url_for(post.preview_image) } }
+  = link_to(image_tag(url_for(post.preview_image), class: "rounded-t"), user_post_path(@user, post))
   .bg-gray-300.px-5.py-5.border-r.border-l.border-dotted.border-gray-600
     %span.block.text-xs.mb-3= "#{time_ago_in_words(post.created_at)} ago"
     %p= post.body

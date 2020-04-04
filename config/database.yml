@@ -6,9 +6,7 @@ default: &default
 test:
   <<: *default
   database: openbook_test
-  port: 5433
 
 development:
   <<: *default
   database: openbook_development
-  port: 5433

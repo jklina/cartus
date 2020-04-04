@@ -19,8 +19,9 @@
 
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :images, as: :imageable
 
-  has_many_attached :images
+  accepts_nested_attributes_for :images
 
   def preview_image
     images.first.variant(resize_to_fill: [1000, 220, { gravity: "Center" }])

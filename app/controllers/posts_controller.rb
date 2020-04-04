@@ -2,6 +2,12 @@ class PostsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @post = @user.posts.build
+    @post.images.build
+  end
+
+  def show
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
   end
 
   def create

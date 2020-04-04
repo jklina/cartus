@@ -2109,6 +2109,11 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
+csrf-xhr@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/csrf-xhr/-/csrf-xhr-1.0.0.tgz#d554e12a75c2460dfe6355c22254f35df0ebac34"
+  integrity sha512-kSyrtgMLyLsznlhGPVa/NpCmfTuo+pLr8dJSUDk6zGsbLjHRRt9PWcYv9N/yvj87K0sNqV2UWjZT/0TA4VOeHA==
+
 css-blank-pseudo@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/css-blank-pseudo/-/css-blank-pseudo-0.1.4.tgz#dfdefd3254bf8a82027993674ccf35483bfcb3c5"
