@@ -1,15 +1,13 @@
 .container.lg.mx-auto.px-5.h-screen.py-5
   .flex.justify-between.content-center.mb-4
     %h3.text-3xl New Post
-    .post-form
     = link_to "Back to Profile", user_path(@user), class: "bg-gray-300 block py-2 px-4 border-2 border-indigo-800 rounded-lg text-indigo-800 font-bold"
   = simple_form_for [@user, @post] do |f|
     = f.input :body,
       label: false,
       placeholder: "What's up?",
       input_html: { class: "bg-gray-200 border border-gray-500 text-indigo-800 p-3 rounded w-full outline-none" }
-    = f.simple_fields_for :images do |i|
-      = f.file_field :image, label: false
+    .file-selector
     = f.submit "Create Post", class: "block w-full mt-4 py-2 border-2 border-indigo-800 rounded-lg text-indigo-800 font-bold bg-gray-300"
 - content_for :tail_scripts do
   = javascript_pack_tag "post_form"

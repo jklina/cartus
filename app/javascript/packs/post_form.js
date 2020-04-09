@@ -5,7 +5,7 @@
 import { Elm } from '../ElmComponents/PostForm/Main'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containerClass = "post-form";
+  const containerClass = "file-selector";
   const targets = document.getElementsByClassName(containerClass);
   for (let target of targets) {
       // const previewImage = target.dataset.previewImage;
