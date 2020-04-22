@@ -6,8 +6,8 @@ import File.Select as Select
 import Html exposing (Html, div, img, p, text)
 import Html.Attributes exposing (class, src)
 import Html.Events exposing (onClick)
-import Http
-import Json.Decode exposing (Decoder, field, string)
+import Http exposing (Header)
+import Json.Decode exposing (Decoder, field, keyValuePairs, list, map, map2, string)
 import Json.Encode as Encode
 import Task
 
@@ -25,7 +25,7 @@ type alias Model =
 
 
 type alias UploadUrl =
-    { url : String }
+    { url : String, headers : List Header }
 
 
 type Status
@@ -79,9 +79,10 @@ previewImage url =
 
 
 type Msg
-    = GotUrl (Result Http.Error String)
+    = GotUrl File (Result Http.Error UploadUrl)
     | GotFiles File (List File)
     | SelectFiles
+    | UploadFinished (Result Http.Error String)
     | GotProgress Http.Progress
     | GotPreviews (List String)
 
@@ -93,17 +94,14 @@ type Msg
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        GotUrl result ->
+        GotUrl file result ->
             case result of
                 Ok url ->
                     let
                         newUrl =
-                            UploadUrl url
-
-                        newUploadUrls =
-                            newUrl :: model.uploadUrls
+                            url
                     in
-                    ( { model | uploadUrls = newUploadUrls }, Cmd.none )
+                    ( model, uploadFile file newUrl )
 
                 Err _ ->
                     ( model, Cmd.none )
@@ -127,6 +125,9 @@ update msg model =
         SelectFiles ->
             ( model, Select.files [ "image/*" ] GotFiles )
 
+        UploadFinished result ->
+            ( model, Select.files [ "image/*" ] GotFiles )
+
 
 fetchUrls : List File -> Cmd Msg
 fetchUrls files =
@@ -138,13 +139,53 @@ requestUrl file =
     Http.post
         { url = "/rails/active_storage/direct_uploads"
         , body = Http.jsonBody (urlRequest file)
-        , expect = Http.expectJson GotUrl urlDecoder
+        , expect = Http.expectJson (GotUrl file) urlDecoder
         }
 
 
-urlDecoder : Decoder String
+uploadFile : File -> UploadUrl -> Cmd Msg
+uploadFile file url =
+    Http.request
+        { method = "PUT"
+        , url = url.url
+        , headers = url.headers
+        , body = Http.fileBody file
+        , expect = Http.expectJson UploadFinished string
+        , timeout = Nothing
+        , tracker = Just "upload"
+        }
+
+
+urlDecoder : Decoder UploadUrl
 urlDecoder =
-    field "direct_upload" (field "url" string)
+    map2 UploadUrl
+        (field "direct_upload" (field "url" string))
+        (field "direct_upload" (field "headers" (keyValuePairs string))
+            |> map (List.map (\( a, b ) -> Http.header a b))
+        )
+
+
+
+-- headersDecoder : Decoder (List Header)
+-- headersDecoder =
+--   list headerDecoder
+--     -- keyValuePairs string |> headersDecoder
+--
+-- headerDecoder : Decoder Header
+-- headerDecoder =
+--     map2 Http.header header value
+-- headersDecoder : Decoder (List ( String, String )) -> Decoder (List Header)
+-- headersDecoder rawHeaders =
+--     list headerDecoder
+--
+--
+-- rawHeaderToHeader : Decoder ( String, String ) -> Decoder Header
+-- rawHeaderToHeader rawHeader =
+--     let
+--         ( header, value ) =
+--             rawHeader
+--     in
+--     map2 Http.header header value
 
 
 urlRequest : File -> Encode.Value
