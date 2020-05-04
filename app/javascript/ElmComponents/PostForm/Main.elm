@@ -1,15 +1,19 @@
 module ElmComponents.PostForm.Main exposing (..)
 
+import Base64
 import Browser
+import Bytes exposing (Bytes)
+import ElmComponents.PostForm.MD5 as MD5
 import File exposing (File)
 import File.Select as Select
+import Hex.Convert
 import Html exposing (Html, div, img, p, text)
 import Html.Attributes exposing (class, src)
 import Html.Events exposing (onClick)
 import Http exposing (Header)
 import Json.Decode exposing (Decoder, field, keyValuePairs, list, map, map2, string)
 import Json.Encode as Encode
-import Task
+import Task exposing (Task)
 
 
 
@@ -18,7 +22,7 @@ import Task
 
 type alias Model =
     { status : Status
-    , files : List File
+    , files : List FileWithChecksum
     , uploadUrls : List UploadUrl
     , previewUrls : List String
     }
@@ -26,6 +30,10 @@ type alias Model =
 
 type alias UploadUrl =
     { url : String, headers : List Header }
+
+
+type alias FileWithChecksum =
+    { file : File, checksum : String }
 
 
 type Status
@@ -85,6 +93,7 @@ type Msg
     | UploadFinished (Result Http.Error String)
     | GotProgress Http.Progress
     | GotPreviews (List String)
+    | GotFileStrings (List FileWithChecksum)
 
 
 
@@ -100,8 +109,11 @@ update msg model =
                     let
                         newUrl =
                             url
+
+                        newUrls =
+                            url :: model.uploadUrls
                     in
-                    ( model, uploadFile file newUrl )
+                    ( { model | uploadUrls = newUrls }, uploadFile file newUrl )
 
                 Err _ ->
                     ( model, Cmd.none )
@@ -113,8 +125,14 @@ update msg model =
 
                 previewUrls =
                     Task.sequence <| List.map File.toUrl selectedFiles
+
+                fileStringsRequests =
+                    Task.sequence <| List.map buildFileWithChecksum selectedFiles
             in
-            ( { model | files = selectedFiles, status = Uploading 0 }, Cmd.batch [ fetchUrls selectedFiles, Task.perform GotPreviews previewUrls ] )
+            ( { model | status = Uploading 0 }, Cmd.batch [ Task.perform GotFileStrings fileStringsRequests, Task.perform GotPreviews previewUrls ] )
+
+        GotFileStrings filesWithChecksum ->
+            ( model, fetchUrls filesWithChecksum )
 
         GotPreviews urls ->
             ( { model | previewUrls = urls }, Cmd.none )
@@ -129,17 +147,41 @@ update msg model =
             ( model, Select.files [ "image/*" ] GotFiles )
 
 
-fetchUrls : List File -> Cmd Msg
+buildFileWithChecksum : File -> Task x FileWithChecksum
+buildFileWithChecksum file =
+    let
+        md5 =
+            Task.map buildChecksum (File.toBytes file)
+    in
+    Task.map (FileWithChecksum file) md5
+
+
+buildChecksum : Bytes -> String
+buildChecksum fileBytes =
+    let
+        hexBytes =
+            MD5.fromBytes fileBytes
+                |> Hex.Convert.toBytes
+    in
+    case hexBytes of
+        Just bytes ->
+            Base64.fromBytes bytes |> Maybe.withDefault ""
+
+        Nothing ->
+            ""
+
+
+fetchUrls : List FileWithChecksum -> Cmd Msg
 fetchUrls files =
     Cmd.batch <| List.map requestUrl files
 
 
-requestUrl : File -> Cmd Msg
+requestUrl : FileWithChecksum -> Cmd Msg
 requestUrl file =
     Http.post
         { url = "/rails/active_storage/direct_uploads"
         , body = Http.jsonBody (urlRequest file)
-        , expect = Http.expectJson (GotUrl file) urlDecoder
+        , expect = Http.expectJson (GotUrl file.file) urlDecoder
         }
 
 
@@ -165,38 +207,15 @@ urlDecoder =
         )
 
 
-
--- headersDecoder : Decoder (List Header)
--- headersDecoder =
---   list headerDecoder
---     -- keyValuePairs string |> headersDecoder
---
--- headerDecoder : Decoder Header
--- headerDecoder =
---     map2 Http.header header value
--- headersDecoder : Decoder (List ( String, String )) -> Decoder (List Header)
--- headersDecoder rawHeaders =
---     list headerDecoder
---
---
--- rawHeaderToHeader : Decoder ( String, String ) -> Decoder Header
--- rawHeaderToHeader rawHeader =
---     let
---         ( header, value ) =
---             rawHeader
---     in
---     map2 Http.header header value
-
-
-urlRequest : File -> Encode.Value
-urlRequest file =
+urlRequest : FileWithChecksum -> Encode.Value
+urlRequest fileWithChecksum =
     Encode.object
         [ ( "blob"
           , Encode.object
-                [ ( "filename", Encode.string (File.name file) )
-                , ( "content_type", Encode.string (File.mime file) )
-                , ( "byte_size", Encode.string (String.fromInt (File.size file)) )
-                , ( "checksum", Encode.string "123" )
+                [ ( "filename", Encode.string (File.name fileWithChecksum.file) )
+                , ( "content_type", Encode.string (File.mime fileWithChecksum.file) )
+                , ( "byte_size", Encode.string (String.fromInt (File.size fileWithChecksum.file)) )
+                , ( "checksum", Encode.string fileWithChecksum.checksum )
                 ]
           )
         ]
