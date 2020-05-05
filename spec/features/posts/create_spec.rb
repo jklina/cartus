@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe "creating a post", type: :feature do
-  it "signs me in" do
+  it "creates a post for the signed in user" do
     user = create(:user)
-    visit new_user_post_path(user)
+    visit new_post_path(as: user)
 
     fill_in("post_body", with: "This is my post.")
     click_button "Create Post"

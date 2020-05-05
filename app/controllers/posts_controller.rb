@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.build
     @post.images.build
   end
@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.build(post_params)
     if @post.save
       flash.notice = "Your post has been created."
@@ -23,12 +23,12 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.find(params[:id])
     if @post.update(post_params)
       flash.notice = "Your post has been updated."
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.find(params[:id])
     if @post.destroy
       flash.notice = "Your post has been deleted."
