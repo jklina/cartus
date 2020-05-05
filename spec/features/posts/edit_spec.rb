@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe "editing a post", type: :feature do
   it "edits a post" do
@@ -17,8 +17,8 @@ describe "editing a post", type: :feature do
     user = create(:user)
     foreign_user = create(:user)
     user_post = create(:post, user: user)
-    expect do
+    expect {
       visit edit_post_path(user_post, as: foreign_user)
-    end.to raise_error(ActiveRecord::RecordNotFound)
+    }.to raise_error(ActiveRecord::RecordNotFound)
   end
 end

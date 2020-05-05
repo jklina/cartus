@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe "destroying a post", type: :feature do
   it "destroying a post" do

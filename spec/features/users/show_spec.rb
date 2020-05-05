@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe "displaying a user profile page", type: :feature do
   it "signs me in" do

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe PostsController, type: :controller do
   describe "DELETE #destroy" do
@@ -7,7 +7,7 @@ RSpec.describe PostsController, type: :controller do
       user_post = create(:post, user: user, body: "Post content")
       sign_in_as(user)
 
-      delete :destroy, params: { id: user_post.id }
+      delete :destroy, params: {id: user_post.id}
 
       expect(response).to redirect_to user_path(user)
       expect(Post.all.size).to be_zero
@@ -19,9 +19,9 @@ RSpec.describe PostsController, type: :controller do
       user_post = create(:post, user: user, body: "Post content")
       sign_in_as(foreign_user)
 
-      expect do
-        delete :destroy, params: { id: user_post.id }
-      end.to raise_error(ActiveRecord::RecordNotFound)
+      expect {
+        delete :destroy, params: {id: user_post.id}
+      }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end

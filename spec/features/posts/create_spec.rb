@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe "creating a post", type: :feature do
   it "creates a post for the signed in user" do

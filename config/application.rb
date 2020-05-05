@@ -1,4 +1,4 @@
-require_relative 'boot'
+require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
@@ -32,13 +32,13 @@ module Openbook
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.generators do |g|
-      g.orm             :active_record
+      g.orm :active_record
       g.template_engine :haml
-      g.stylesheets     false
-      g.javascripts     false
-      g.helper          false
-      g.view_specs      false
-      g.helper_specs    false
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+      g.view_specs false
+      g.helper_specs false
     end
   end
 end
