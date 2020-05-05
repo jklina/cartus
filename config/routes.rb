@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
 
   resources :posts, except: :show
+  resources :images, only: :create
 end
