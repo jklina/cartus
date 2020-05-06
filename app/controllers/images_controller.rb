@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   def create
-    @images = Image.create(images_params) { |image|
+    @images = Image.create!(images_params) { |image|
       image.imageable = current_user
     }
     respond_to do |format|
