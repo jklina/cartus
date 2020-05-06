@@ -1,13 +1,16 @@
 class ImagesController < ApplicationController
   def create
-    @user = User.find(params[:user_id])
-    @post = @user.posts.build(post_params)
-    if @post.save
-      flash.notice = "Your post has been created."
-      redirect_to @user
-    else
-      flash.alert = "There was a problem saving your post."
-      render "new"
+    @images = Image.create(images_params) { |image|
+      image.imageable = current_user
+    }
+    respond_to do |format|
+      format.json { render json: @images }
     end
+  end
+
+  private
+
+  def images_params
+    params.permit(images: [:description, :image]).require(:images)
   end
 end
