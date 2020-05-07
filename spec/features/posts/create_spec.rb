@@ -3,6 +3,7 @@ require "rails_helper"
 describe "creating a post", type: :feature do
   it "creates a post for the signed in user" do
     user = create(:user)
+    image = create(:image, user: user)
     visit new_post_path(as: user)
 
     fill_in("post_body", with: "This is my post.")
@@ -10,5 +11,6 @@ describe "creating a post", type: :feature do
 
     expect(page).to have_current_path(user_path(user))
     expect(page).to have_content("This is my post.")
+    expect(page).to have_selector(".preview-image")
   end
 end
