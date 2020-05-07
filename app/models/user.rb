@@ -23,6 +23,7 @@ class User < ApplicationRecord
   include Clearance::User
 
   has_many :posts
+  has_many :images
 
   def full_name
     "#{first_name} #{last_name}"

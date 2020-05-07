@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe ImagesController, type: :controller do
   describe "POST #create" do
-    it "creates multiple images via xhr" do
+    it "creates an image via xhr" do
       user = create(:user)
       sign_in_as(user)
       blob = ActiveStorage::Blob.create_after_upload!(
@@ -12,24 +12,16 @@ RSpec.describe ImagesController, type: :controller do
       )
 
       post :create, format: :json, params: {
-        images: [
-          {
-            description: "image 1",
-            image: blob.signed_id
-          },
-          {
-            description: "image 2",
-            image: blob.signed_id
-          }
-        ]
+        image: {
+          description: "image 1",
+          image: blob.signed_id
+        }
       }
 
-      expect(response).to be_ok
-      images_json = JSON.parse(response.body)
-      expect(images_json.map { |i| i.fetch("imageable_type") }).to all(eq "User")
-      expect(images_json.map { |i| i.fetch("imageable_id") }).to all(eq user.id)
-      expect(images_json.map { |i| i.fetch("description") })
-        .to match_array(["image 1", "image 2"])
+      expect(response.code).to eq("200")
+      image_json = JSON.parse(response.body)
+      expect(image_json.fetch("user_id")).to eq(user.id)
+      expect(image_json.fetch("description")).to eq("image 1")
     end
   end
 end

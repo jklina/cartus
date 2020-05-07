@@ -1,16 +1,15 @@
 class ImagesController < ApplicationController
   def create
-    @images = Image.create!(images_params) { |image|
-      image.imageable = current_user
-    }
+    @image = current_user.images.build(image_params)
+    @image.save
     respond_to do |format|
-      format.json { render json: @images }
+      format.json { render json: @image }
     end
   end
 
   private
 
-  def images_params
-    params.permit(images: [:description, :image, :title]).require(:images)
+  def image_params
+    params.require(:image).permit(:description, :image, :title)
   end
 end
