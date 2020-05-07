@@ -44,11 +44,10 @@ class PostsController < ApplicationController
     @post = @user.posts.find(params[:id])
     if @post.destroy
       flash.notice = "Your post has been deleted."
-      redirect_to @user
     else
       flash.alert = "Your post has not been deleted."
-      redirect_to @user
     end
+    redirect_to @user
   end
 
   private
