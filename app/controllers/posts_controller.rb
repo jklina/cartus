@@ -13,7 +13,8 @@ class PostsController < ApplicationController
   def create
     @user = current_user
     @post = @user.posts.build(post_params)
-    if @post.save
+    unassigned_images = current_user.images.unassigned
+    if @post.save && unassigned_images.update_all(imageable_id: @post.id, imageable_type: "Post")
       flash.notice = "Your post has been created."
       redirect_to @user
     else

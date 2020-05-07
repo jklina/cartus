@@ -28,4 +28,8 @@ class Image < ApplicationRecord
   has_one_attached :image
 
   validates :image, presence: true
+
+  def self.unassigned
+    where(imageable: nil)
+  end
 end
