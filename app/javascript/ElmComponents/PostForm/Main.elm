@@ -90,7 +90,8 @@ type Msg
     = GotUrl File (Result Http.Error FileIdentifyingInfo)
     | GotFiles File (List File)
     | SelectFiles
-    | UploadFinished (Result Http.Error ()) FileIdentifyingInfo
+    | ImageCreated (Result Http.Error ())
+    | UploadFinished FileIdentifyingInfo (Result Http.Error ())
     | GotProgress Http.Progress
     | GotPreviews (List String)
     | GotFileStrings (List FileWithChecksum)
@@ -140,8 +141,11 @@ update msg model =
         SelectFiles ->
             ( model, Select.files [ "image/*" ] GotFiles )
 
-        UploadFinished result fileInfo ->
-            ( model, Cmd.none )
+        UploadFinished fileInfo result ->
+            ( model, buildRailsImage fileInfo )
+
+        ImageCreated result ->
+            ( { model | status = Done }, Cmd.none )
 
 
 buildFileWithChecksum : File -> Task x FileWithChecksum
@@ -182,6 +186,15 @@ requestUrl file =
         }
 
 
+buildRailsImage : FileIdentifyingInfo -> Cmd Msg
+buildRailsImage fileInfo =
+    Http.post
+        { url = "/images"
+        , body = Http.jsonBody (imageParams fileInfo)
+        , expect = Http.expectWhatever ImageCreated
+        }
+
+
 uploadFile : File -> FileIdentifyingInfo -> Cmd Msg
 uploadFile file fileInfo =
     Http.request
@@ -189,7 +202,7 @@ uploadFile file fileInfo =
         , url = fileInfo.url
         , headers = fileInfo.headers
         , body = Http.fileBody file
-        , expect = Http.expectWhatever UploadFinished fileInfo
+        , expect = Http.expectWhatever (UploadFinished fileInfo)
         , timeout = Nothing
         , tracker = Just "upload"
         }
@@ -217,6 +230,12 @@ urlRequest fileWithChecksum =
                 ]
           )
         ]
+
+
+imageParams : FileIdentifyingInfo -> Encode.Value
+imageParams fileInfo =
+    Encode.object
+        [ ( "image", Encode.object [ ( "image", Encode.string fileInfo.signedId ) ] ) ]
 
 
 
