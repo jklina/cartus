@@ -1,9 +1,10 @@
 class ImagesController < ApplicationController
   def create
     @image = current_user.images.build(image_params)
-    @image.save
-    respond_to do |format|
-      format.json { render json: @image }
+    if @image.save
+      render json: @image
+    else
+      render json: @image.errors, status: :unprocessable_entity
     end
   end
 

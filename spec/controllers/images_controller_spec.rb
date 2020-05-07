@@ -23,5 +23,20 @@ RSpec.describe ImagesController, type: :controller do
       expect(image_json.fetch("user_id")).to eq(user.id)
       expect(image_json.fetch("description")).to eq("image 1")
     end
+
+    it "doesn't create an invalid image via xhr" do
+      user = create(:user)
+      sign_in_as(user)
+
+      post :create, format: :json, params: {
+        image: {
+          description: "image 1"
+        }
+      }
+
+      expect(response.code).to eq("422")
+      errors = JSON.parse(response.body)
+      expect(errors.fetch("image").first).to eq("can't be blank")
+    end
   end
 end

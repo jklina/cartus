@@ -22,7 +22,7 @@
 #
 
 class Image < ApplicationRecord
-  belongs_to :imageable, polymorphic: true
+  belongs_to :imageable, polymorphic: true, optional: true
   belongs_to :user
 
   has_one_attached :image

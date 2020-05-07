@@ -11,7 +11,7 @@ import Html exposing (Html, div, img, p, text)
 import Html.Attributes exposing (class, src)
 import Html.Events exposing (onClick)
 import Http exposing (Header)
-import Json.Decode exposing (Decoder, field, keyValuePairs, list, map, map2, string)
+import Json.Decode exposing (Decoder, field, keyValuePairs, list, map, map3, string)
 import Json.Encode as Encode
 import Task exposing (Task)
 
@@ -23,13 +23,13 @@ import Task exposing (Task)
 type alias Model =
     { status : Status
     , files : List FileWithChecksum
-    , uploadUrls : List UploadUrl
+    , uploadUrls : List FileIdentifyingInfo
     , previewUrls : List String
     }
 
 
-type alias UploadUrl =
-    { url : String, headers : List Header }
+type alias FileIdentifyingInfo =
+    { signedId : String, url : String, headers : List Header }
 
 
 type alias FileWithChecksum =
@@ -87,10 +87,10 @@ previewImage url =
 
 
 type Msg
-    = GotUrl File (Result Http.Error UploadUrl)
+    = GotUrl File (Result Http.Error FileIdentifyingInfo)
     | GotFiles File (List File)
     | SelectFiles
-    | UploadFinished (Result Http.Error String)
+    | UploadFinished (Result Http.Error ()) FileIdentifyingInfo
     | GotProgress Http.Progress
     | GotPreviews (List String)
     | GotFileStrings (List FileWithChecksum)
@@ -105,15 +105,12 @@ update msg model =
     case msg of
         GotUrl file result ->
             case result of
-                Ok url ->
+                Ok fileInfo ->
                     let
-                        newUrl =
-                            url
-
                         newUrls =
-                            url :: model.uploadUrls
+                            fileInfo :: model.uploadUrls
                     in
-                    ( { model | uploadUrls = newUrls }, uploadFile file newUrl )
+                    ( { model | uploadUrls = newUrls }, uploadFile file fileInfo )
 
                 Err _ ->
                     ( model, Cmd.none )
@@ -143,8 +140,8 @@ update msg model =
         SelectFiles ->
             ( model, Select.files [ "image/*" ] GotFiles )
 
-        UploadFinished result ->
-            ( model, Select.files [ "image/*" ] GotFiles )
+        UploadFinished result fileInfo ->
+            ( model, Cmd.none )
 
 
 buildFileWithChecksum : File -> Task x FileWithChecksum
@@ -185,22 +182,23 @@ requestUrl file =
         }
 
 
-uploadFile : File -> UploadUrl -> Cmd Msg
-uploadFile file url =
+uploadFile : File -> FileIdentifyingInfo -> Cmd Msg
+uploadFile file fileInfo =
     Http.request
         { method = "PUT"
-        , url = url.url
-        , headers = url.headers
+        , url = fileInfo.url
+        , headers = fileInfo.headers
         , body = Http.fileBody file
-        , expect = Http.expectJson UploadFinished string
+        , expect = Http.expectWhatever UploadFinished fileInfo
         , timeout = Nothing
         , tracker = Just "upload"
         }
 
 
-urlDecoder : Decoder UploadUrl
+urlDecoder : Decoder FileIdentifyingInfo
 urlDecoder =
-    map2 UploadUrl
+    map3 FileIdentifyingInfo
+        (field "signed_id" string)
         (field "direct_upload" (field "url" string))
         (field "direct_upload" (field "headers" (keyValuePairs string))
             |> map (List.map (\( a, b ) -> Http.header a b))
