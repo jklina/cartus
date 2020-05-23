@@ -86,16 +86,23 @@ view model =
 
 renderPreviews : List FileWithInfo -> Html Msg
 renderPreviews files =
-    div [ class "p-4 bg-gray-200 border-gray-500 border-dashed border flex flex-wrap" ] (List.map previewImage files)
+    let
+        sortedfiles =
+            List.sortBy (\fileWithInfo -> File.name fileWithInfo.file) files
+    in
+    div [ class "p-4 bg-gray-200 border-gray-500 border-dashed border flex flex-wrap" ] (List.map previewImage sortedfiles)
 
 
 previewImage : FileWithInfo -> Html Msg
 previewImage file =
-    case file.previewUrl of
-        Just url ->
-            div [ class "w-1/5 p-2" ] [ img [ src url ] [] ]
+    case ( file.previewUrl, file.status ) of
+        ( Just url, Uploading percentComplete ) ->
+            div [ class "w-1/5 p-2" ] [ img [ src url ] [], text (String.fromFloat percentComplete) ]
 
-        Nothing ->
+        ( Just url, _ ) ->
+            div [ class "w-1/5 p-2" ] [ img [ src url ] [], text "Complete" ]
+
+        ( Nothing, _ ) ->
             div [ class "w-1/5 p-2" ] [ text "Loading" ]
 
 
@@ -165,7 +172,7 @@ update msg model =
                     file :: files
 
                 selectedFilesWithInfo =
-                    List.map (\plainFile -> FileWithInfo file Nothing Nothing Nothing Nothing Nothing Waiting) selectedFiles
+                    List.map initializeNewFileWithInfoFromFile selectedFiles
 
                 filesPreviewUrlRequests =
                     Task.sequence <| List.map addFilePreviewUrl selectedFilesWithInfo
@@ -216,6 +223,11 @@ update msg model =
             ( { model | status = AllDone }, Cmd.none )
 
 
+initializeNewFileWithInfoFromFile : File -> FileWithInfo
+initializeNewFileWithInfoFromFile file =
+    FileWithInfo file Nothing Nothing Nothing Nothing Nothing Waiting
+
+
 addChecksumToExistingFileWithInfo : FileWithInfo -> Model -> Model
 addChecksumToExistingFileWithInfo fileWithChecksum existingModel =
     let
@@ -259,16 +271,20 @@ addPreviewUrlToExistingFileWithInfo fileWithPreviewUrl existingModel =
 
 
 replaceExistingFileWithInfo : Model -> FileWithInfo -> Model
-replaceExistingFileWithInfo model fileWithInfo =
+replaceExistingFileWithInfo model newFileWithInfo =
     let
         ( matchingFiles, nonMatchingfiles ) =
-            List.partition (fileMatches fileWithInfo) model.files
+            List.partition (fileMatches newFileWithInfo) model.files
     in
     if List.isEmpty matchingFiles then
         model
 
     else
-        { model | files = fileWithInfo :: nonMatchingfiles }
+        let
+            newModel =
+                { model | files = newFileWithInfo :: nonMatchingfiles }
+        in
+        { model | files = newFileWithInfo :: nonMatchingfiles }
 
 
 findMatchingFile : Model -> FileWithInfo -> Maybe FileWithInfo
@@ -282,7 +298,7 @@ findMatchingFile model fileWithInfo =
 
 fileMatches : FileWithInfo -> FileWithInfo -> Bool
 fileMatches file1 file2 =
-    (File.name file1.file == File.name file2.file) && (File.size file1.file == File.size file2.file)
+    file1.file == file2.file
 
 
 updateFileWithNewInfo : FileWithInfo -> Model -> Model
