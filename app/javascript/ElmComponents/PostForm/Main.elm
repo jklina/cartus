@@ -77,11 +77,8 @@ view model =
         AllWaiting ->
             div [ onClick SelectFiles, class "h-16 bg-gray-200 border-gray-500 border-dashed border text-center flex items-center justify-center" ] [ text "Upload Photos" ]
 
-        SomeUploading ->
+        _ ->
             renderPreviews model.files
-
-        AllDone ->
-            text "Upload complete!"
 
 
 renderPreviews : List FileWithInfo -> Html Msg
@@ -99,11 +96,17 @@ previewImage file =
         ( Just url, Uploading percentComplete ) ->
             div [ class "w-1/5 p-2" ] [ img [ src url ] [], text (String.fromFloat percentComplete) ]
 
+        ( Just url, Waiting ) ->
+            div [ class "w-1/5 p-2" ] [ img [ src url ] [], text "Waiting" ]
+
         ( Just url, _ ) ->
             div [ class "w-1/5 p-2" ] [ img [ src url ] [], text "Complete" ]
 
-        ( Nothing, _ ) ->
+        ( Nothing, Waiting ) ->
             div [ class "w-1/5 p-2" ] [ text "Loading" ]
+
+        ( Nothing, _ ) ->
+            text "Nothing"
 
 
 
@@ -217,7 +220,20 @@ update msg model =
             ( model, Select.files [ "image/*" ] GotFiles )
 
         UploadFinished fileWithInfo result ->
-            ( model, buildRailsImage fileWithInfo )
+            case result of
+                Ok _ ->
+                    let
+                        newModel =
+                            addStatusToExistingFileWithInfo { fileWithInfo | status = Done } model
+                    in
+                    ( newModel, buildRailsImage fileWithInfo )
+
+                Err _ ->
+                    let
+                        newModel =
+                            addStatusToExistingFileWithInfo { fileWithInfo | status = Fail } model
+                    in
+                    ( newModel, Cmd.none )
 
         ImageCreated result ->
             ( { model | status = AllDone }, Cmd.none )
