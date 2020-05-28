@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "home/index"
   root to: "home#index"
 
-  resources :users, only: :show do
+  resources :users, only: [:show, :edit, :update] do
     resources :posts, only: :show
   end
 

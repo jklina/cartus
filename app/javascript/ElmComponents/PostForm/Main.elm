@@ -48,6 +48,7 @@ type alias FileWithInfo =
 type Status
     = Waiting
     | Uploading Float
+    | UploadComplete
     | Done
     | Fail
 
@@ -117,7 +118,7 @@ type Msg
     = GotUploadUrl FileWithInfo (Result Http.Error FileIdentifyingInfo)
     | GotFiles File (List File)
     | SelectFiles
-    | ImageCreated (Result Http.Error ())
+    | ImageCreated FileWithInfo (Result Http.Error ())
     | UploadFinished FileWithInfo (Result Http.Error ())
     | GotProgress FileWithInfo Http.Progress
     | GotPreviews (List FileWithInfo)
@@ -224,7 +225,7 @@ update msg model =
                 Ok _ ->
                     let
                         newModel =
-                            addStatusToExistingFileWithInfo { fileWithInfo | status = Done } model
+                            addStatusToExistingFileWithInfo { fileWithInfo | status = UploadComplete } model
                     in
                     ( newModel, buildRailsImage fileWithInfo )
 
@@ -235,13 +236,36 @@ update msg model =
                     in
                     ( newModel, Cmd.none )
 
-        ImageCreated result ->
-            ( { model | status = AllDone }, Cmd.none )
+        ImageCreated fileWithInfo result ->
+            case result of
+                Ok _ ->
+                    let
+                        newModel =
+                            addStatusToExistingFileWithInfo { fileWithInfo | status = Done } model
+                    in
+                    case allImagesCompleted newModel of
+                        True ->
+                            ( { newModel | status = AllDone }, Cmd.none )
+
+                        False ->
+                            ( newModel, Cmd.none )
+
+                Err _ ->
+                    let
+                        newModel =
+                            addStatusToExistingFileWithInfo { fileWithInfo | status = Fail } model
+                    in
+                    ( newModel, Cmd.none )
 
 
 initializeNewFileWithInfoFromFile : File -> FileWithInfo
 initializeNewFileWithInfoFromFile file =
     FileWithInfo file Nothing Nothing Nothing Nothing Nothing Waiting
+
+
+allImagesCompleted : Model -> Bool
+allImagesCompleted model =
+    List.all (\fileWithInfo -> fileWithInfo.status == Done) model.files
 
 
 addChecksumToExistingFileWithInfo : FileWithInfo -> Model -> Model
@@ -388,7 +412,7 @@ buildRailsImage fileInfo =
     Http.post
         { url = "/images"
         , body = Http.jsonBody (imageParams fileInfo)
-        , expect = Http.expectWhatever ImageCreated
+        , expect = Http.expectWhatever (ImageCreated fileInfo)
         }
 
 

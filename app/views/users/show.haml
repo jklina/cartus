@@ -1,6 +1,7 @@
 .container.lg.mx-auto.px-5.h-screen.py-5.flex
   .flex-1.flex.h-screen
     %h3.text-3xl= @user.full_name
+    = link_to "Edit", edit_user_path(@user), class: "text-sm"
     #my-elm-container
   .flex-1
     .flex.justify-between.content-center.mb-4
