@@ -7,11 +7,11 @@ import ElmComponents.PostForm.MD5 as MD5
 import File exposing (File)
 import File.Select as Select
 import Hex.Convert
-import Html exposing (Html, div, img, p, text)
+import Html exposing (Html, a, div, img, text)
 import Html.Attributes exposing (class, src)
 import Html.Events exposing (onClick)
 import Http exposing (Header)
-import Json.Decode exposing (Decoder, field, keyValuePairs, list, map, map3, string)
+import Json.Decode exposing (Decoder, field, keyValuePairs, map, map3, string)
 import Json.Encode as Encode
 import Task exposing (Task)
 
@@ -27,11 +27,16 @@ type alias Model =
 
 
 type alias FileIdentifyingInfo =
-    { signedId : String, url : String, headers : List Header }
+    { signedId : String
+    , url : String
+    , headers : List Header
+    }
 
 
 type alias FileWithChecksum =
-    { file : File, checksum : String }
+    { file : File
+    , checksum : String
+    }
 
 
 type alias FileWithInfo =
@@ -101,7 +106,7 @@ previewImage file =
             div [ class "w-1/5 p-2" ] [ img [ src url ] [], text "Waiting" ]
 
         ( Just url, _ ) ->
-            div [ class "w-1/5 p-2" ] [ img [ src url ] [], text "Complete" ]
+            div [ class "w-1/5 p-2" ] [ img [ src url ] [], text "Complete", a [ class "text-sm text-red-800", onClick (DeleteFile file) ] [ text "Delete" ] ]
 
         ( Nothing, Waiting ) ->
             div [ class "w-1/5 p-2" ] [ text "Loading" ]
@@ -123,6 +128,7 @@ type Msg
     | GotProgress FileWithInfo Http.Progress
     | GotPreviews (List FileWithInfo)
     | GotChecksums (List FileWithInfo)
+    | DeleteFile FileWithInfo
 
 
 
@@ -243,12 +249,12 @@ update msg model =
                         newModel =
                             addStatusToExistingFileWithInfo { fileWithInfo | status = Done } model
                     in
-                    case allImagesCompleted newModel of
-                        True ->
-                            ( { newModel | status = AllDone }, Cmd.none )
+                    -- case allImagesCompleted newModel of
+                    if allImagesCompleted newModel then
+                        ( { newModel | status = AllDone }, Cmd.none )
 
-                        False ->
-                            ( newModel, Cmd.none )
+                    else
+                        ( newModel, Cmd.none )
 
                 Err _ ->
                     let
@@ -256,6 +262,22 @@ update msg model =
                             addStatusToExistingFileWithInfo { fileWithInfo | status = Fail } model
                     in
                     ( newModel, Cmd.none )
+
+        DeleteFile fileWithInfo ->
+            let
+                newModel =
+                    removeFileFromModel fileWithInfo model
+            in
+            ( newModel, Cmd.none )
+
+
+removeFileFromModel : FileWithInfo -> Model -> Model
+removeFileFromModel fileWithInfo model =
+    let
+        newFiles =
+            List.filter (fileMatches fileWithInfo >> not) model.files
+    in
+    { model | files = newFiles }
 
 
 initializeNewFileWithInfoFromFile : File -> FileWithInfo
@@ -320,10 +342,6 @@ replaceExistingFileWithInfo model newFileWithInfo =
         model
 
     else
-        let
-            newModel =
-                { model | files = newFileWithInfo :: nonMatchingfiles }
-        in
         { model | files = newFileWithInfo :: nonMatchingfiles }
 
 
