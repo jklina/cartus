@@ -8,6 +8,15 @@ class ImagesController < ApplicationController
     end
   end
 
+  def destroy
+    image = current_user.images.find(params[:id])
+    if image.destroy
+      head :no_content
+    else
+      render json: image.errors, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def image_params

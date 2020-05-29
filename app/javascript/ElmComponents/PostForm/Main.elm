@@ -11,7 +11,7 @@ import Html exposing (Html, a, div, img, text)
 import Html.Attributes exposing (class, src)
 import Html.Events exposing (onClick)
 import Http exposing (Header)
-import Json.Decode exposing (Decoder, field, keyValuePairs, map, map3, string)
+import Json.Decode exposing (Decoder, field, int, keyValuePairs, map, map3, string)
 import Json.Encode as Encode
 import Task exposing (Task)
 
@@ -47,6 +47,7 @@ type alias FileWithInfo =
     , previewUrl : Maybe String
     , headers : Maybe (List Header)
     , status : Status
+    , railsId : Maybe Int
     }
 
 
@@ -54,8 +55,9 @@ type Status
     = Waiting
     | Uploading Float
     | UploadComplete
-    | Done
-    | Fail
+    | RailsImageCreated
+    | FailUpload
+    | FailDelete
 
 
 type AllUploadStatus
@@ -123,12 +125,13 @@ type Msg
     = GotUploadUrl FileWithInfo (Result Http.Error FileIdentifyingInfo)
     | GotFiles File (List File)
     | SelectFiles
-    | ImageCreated FileWithInfo (Result Http.Error ())
+    | ImageCreated FileWithInfo (Result Http.Error Int)
     | UploadFinished FileWithInfo (Result Http.Error ())
     | GotProgress FileWithInfo Http.Progress
     | GotPreviews (List FileWithInfo)
     | GotChecksums (List FileWithInfo)
     | DeleteFile FileWithInfo
+    | ImageDeleted FileWithInfo (Result Http.Error ())
 
 
 
@@ -238,18 +241,17 @@ update msg model =
                 Err _ ->
                     let
                         newModel =
-                            addStatusToExistingFileWithInfo { fileWithInfo | status = Fail } model
+                            addStatusToExistingFileWithInfo { fileWithInfo | status = FailUpload } model
                     in
                     ( newModel, Cmd.none )
 
         ImageCreated fileWithInfo result ->
             case result of
-                Ok _ ->
+                Ok id ->
                     let
                         newModel =
-                            addStatusToExistingFileWithInfo { fileWithInfo | status = Done } model
+                            addStatusAndIdToExistingFileWithInfo { fileWithInfo | status = RailsImageCreated, railsId = Just id } model
                     in
-                    -- case allImagesCompleted newModel of
                     if allImagesCompleted newModel then
                         ( { newModel | status = AllDone }, Cmd.none )
 
@@ -259,16 +261,36 @@ update msg model =
                 Err _ ->
                     let
                         newModel =
-                            addStatusToExistingFileWithInfo { fileWithInfo | status = Fail } model
+                            addStatusToExistingFileWithInfo { fileWithInfo | status = FailUpload } model
                     in
                     ( newModel, Cmd.none )
 
         DeleteFile fileWithInfo ->
-            let
-                newModel =
-                    removeFileFromModel fileWithInfo model
-            in
-            ( newModel, Cmd.none )
+            if fileWithInfo.status == RailsImageCreated then
+                ( model, deleteImage fileWithInfo )
+
+            else
+                let
+                    newModel =
+                        removeFileFromModel fileWithInfo model
+                in
+                ( newModel, Cmd.none )
+
+        ImageDeleted fileWithInfo result ->
+            case result of
+                Ok _ ->
+                    let
+                        newModel =
+                            removeFileFromModel fileWithInfo model
+                    in
+                    ( newModel, Cmd.none )
+
+                Err _ ->
+                    let
+                        newModel =
+                            addStatusToExistingFileWithInfo { fileWithInfo | status = FailDelete } model
+                    in
+                    ( newModel, Cmd.none )
 
 
 removeFileFromModel : FileWithInfo -> Model -> Model
@@ -282,12 +304,12 @@ removeFileFromModel fileWithInfo model =
 
 initializeNewFileWithInfoFromFile : File -> FileWithInfo
 initializeNewFileWithInfoFromFile file =
-    FileWithInfo file Nothing Nothing Nothing Nothing Nothing Waiting
+    FileWithInfo file Nothing Nothing Nothing Nothing Nothing Waiting Nothing
 
 
 allImagesCompleted : Model -> Bool
 allImagesCompleted model =
-    List.all (\fileWithInfo -> fileWithInfo.status == Done) model.files
+    List.all (\fileWithInfo -> fileWithInfo.status == RailsImageCreated) model.files
 
 
 addChecksumToExistingFileWithInfo : FileWithInfo -> Model -> Model
@@ -316,6 +338,20 @@ addStatusToExistingFileWithInfo fileWithStatus existingModel =
 
         Just fileToUpdate ->
             replaceExistingFileWithInfo existingModel { fileToUpdate | status = fileWithStatus.status }
+
+
+addStatusAndIdToExistingFileWithInfo : FileWithInfo -> Model -> Model
+addStatusAndIdToExistingFileWithInfo fileWithStatusAndId existingModel =
+    let
+        possibleFileToUpdate =
+            findMatchingFile existingModel fileWithStatusAndId
+    in
+    case possibleFileToUpdate of
+        Nothing ->
+            existingModel
+
+        Just fileToUpdate ->
+            replaceExistingFileWithInfo existingModel { fileToUpdate | status = fileWithStatusAndId.status, railsId = fileWithStatusAndId.railsId }
 
 
 addPreviewUrlToExistingFileWithInfo : FileWithInfo -> Model -> Model
@@ -430,7 +466,7 @@ buildRailsImage fileInfo =
     Http.post
         { url = "/images"
         , body = Http.jsonBody (imageParams fileInfo)
-        , expect = Http.expectWhatever (ImageCreated fileInfo)
+        , expect = Http.expectJson (ImageCreated fileInfo) imageDecoder
         }
 
 
@@ -447,6 +483,24 @@ uploadFile fileWithInfo =
         }
 
 
+deleteImage : FileWithInfo -> Cmd Msg
+deleteImage fileWithInfo =
+    case fileWithInfo.railsId of
+        Just id ->
+            Http.request
+                { method = "DELETE"
+                , url = "/images/" ++ String.fromInt id
+                , expect = Http.expectWhatever (ImageDeleted fileWithInfo)
+                , timeout = Nothing
+                , headers = []
+                , body = Http.emptyBody
+                , tracker = Nothing
+                }
+
+        Nothing ->
+            Cmd.none
+
+
 urlDecoder : Decoder FileIdentifyingInfo
 urlDecoder =
     map3 FileIdentifyingInfo
@@ -455,6 +509,11 @@ urlDecoder =
         (field "direct_upload" (field "headers" (keyValuePairs string))
             |> map (List.map (\( a, b ) -> Http.header a b))
         )
+
+
+imageDecoder : Decoder Int
+imageDecoder =
+    field "id" int
 
 
 urlRequest : FileWithInfo -> Encode.Value
