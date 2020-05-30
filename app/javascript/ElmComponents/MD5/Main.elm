@@ -1,4 +1,4 @@
-module ElmComponents.PostForm.MD5 exposing (hex, byteValues, fromBytes)
+module ElmComponents.MD5.Main exposing (hex, byteValues, fromBytes)
 
 {-| This library allows you to compute MD5 message digests in Elm. It exposes a
 single function that takes any string and outputs a "fingerprint" containing 32

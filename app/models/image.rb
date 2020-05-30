@@ -32,4 +32,8 @@ class Image < ApplicationRecord
   def self.unassigned
     where(imageable: nil)
   end
+
+  def gallery_preview
+    image.variant(resize_to_limit: [200, 200])
+  end
 end

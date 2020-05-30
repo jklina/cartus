@@ -22,10 +22,18 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  has_many :posts
-  has_many :images
+  has_many :posts, dependent: :destroy
+  has_many :images, dependent: :destroy
+  has_one :profile_image,
+    as: :imageable,
+    dependent: :destroy,
+    class_name: "Image"
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def profile_image_url
+    profile_image.image.variant(resize_to_fill: [385, 289, {gravity: "Center"}])
   end
 end

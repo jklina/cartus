@@ -1,9 +1,9 @@
-module ElmComponents.PostForm.Main exposing (..)
+module ElmComponents.PostForm.Main exposing (main)
 
 import Base64
 import Browser
 import Bytes exposing (Bytes)
-import ElmComponents.PostForm.MD5 as MD5
+import ElmComponents.MD5.Main as MD5
 import File exposing (File)
 import File.Select as Select
 import Hex.Convert
@@ -30,12 +30,6 @@ type alias FileIdentifyingInfo =
     { signedId : String
     , url : String
     , headers : List Header
-    }
-
-
-type alias FileWithChecksum =
-    { file : File
-    , checksum : String
     }
 
 
@@ -464,7 +458,7 @@ requestUrl file =
 buildRailsImage : FileWithInfo -> Cmd Msg
 buildRailsImage fileInfo =
     Http.post
-        { url = "/images"
+        { url = "/post_images"
         , body = Http.jsonBody (imageParams fileInfo)
         , expect = Http.expectJson (ImageCreated fileInfo) imageDecoder
         }
@@ -489,7 +483,7 @@ deleteImage fileWithInfo =
         Just id ->
             Http.request
                 { method = "DELETE"
-                , url = "/images/" ++ String.fromInt id
+                , url = "/post_images/" ++ String.fromInt id
                 , expect = Http.expectWhatever (ImageDeleted fileWithInfo)
                 , timeout = Nothing
                 , headers = []

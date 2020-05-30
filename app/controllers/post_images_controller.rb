@@ -1,4 +1,4 @@
-class ImagesController < ApplicationController
+class PostImagesController < ApplicationController
   def create
     @image = current_user.images.build(image_params)
     if @image.save

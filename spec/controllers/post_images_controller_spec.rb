@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe ImagesController, type: :controller do
+RSpec.describe PostImagesController, type: :controller do
   describe "POST #create" do
     it "creates an image via xhr" do
       user = create(:user)
