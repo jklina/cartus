@@ -26,6 +26,27 @@ RSpec.describe UserProfileImagesController, type: :controller do
       expect(image_json.fetch("imageable_type")).to eq("User")
     end
 
+    it "overwrites an existing profile image" do
+      user = create(:user)
+      image = create(:image, user: user, imageable: user)
+      sign_in_as(user)
+      blob = ActiveStorage::Blob.create_after_upload!(
+        io: File.open(Rails.root.join(file_fixture("kitten.jpg")), "rb"),
+        filename: "kitten.jpg",
+        content_type: "image/jpeg"
+      )
+
+      post :create, format: :json, params: {
+        image: {
+          description: "image 1",
+          image: blob.signed_id
+        }
+      }
+
+      expect(response.code).to eq("200")
+      expect(user.images.size).to eq(1)
+    end
+
     it "doesn't create an invalid image via xhr" do
       user = create(:user)
       sign_in_as(user)

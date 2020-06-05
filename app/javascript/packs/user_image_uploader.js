@@ -7,7 +7,7 @@ import { Elm } from '../ElmComponents/UserImageUploader/Main'
 document.addEventListener('DOMContentLoaded', () => {
   const containerClass = ".user-image-uploader";
   const target = document.querySelector(containerClass);
-  const profileImage = target.dataset.profileImage;
+  const profileImage = { url: target.dataset.profileImage, id: Number(target.dataset.id) }
   console.log(profileImage)
   Elm.ElmComponents.UserImageUploader.Main.init({ node: target, flags: profileImage });
 })

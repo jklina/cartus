@@ -8,10 +8,10 @@ import File exposing (File)
 import File.Select as Select
 import Hex.Convert
 import Html exposing (Html, a, div, img, text)
-import Html.Attributes exposing (class, src)
-import Html.Events exposing (onClick)
+import Html.Attributes exposing (class, src, style)
+import Html.Events exposing (onClick, onMouseEnter, onMouseLeave)
 import Http exposing (Header)
-import Json.Decode exposing (Decoder, field, int, keyValuePairs, map, map3, string)
+import Json.Decode exposing (Decoder, decodeValue, field, int, keyValuePairs, map, map2, map3, string)
 import Json.Encode as Encode
 import Task exposing (Task)
 
@@ -21,8 +21,16 @@ import Task exposing (Task)
 
 
 type alias Model =
-    { file : Maybe FileWithInfo
+    { file : Maybe File
+    , checksum : Maybe String
+    , signedId : Maybe String
+    , uploadUrl : Maybe String
+    , previewUrl : Maybe String
+    , headers : Maybe (List Header)
+    , status : Status
     , existingImageUrl : Maybe String
+    , displayMenu : Bool
+    , railsId : Maybe Int
     }
 
 
@@ -30,18 +38,6 @@ type alias FileIdentifyingInfo =
     { signedId : String
     , url : String
     , headers : List Header
-    }
-
-
-type alias FileWithInfo =
-    { file : File
-    , checksum : Maybe String
-    , signedId : Maybe String
-    , uploadUrl : Maybe String
-    , previewUrl : Maybe String
-    , headers : Maybe (List Header)
-    , status : Status
-    , railsId : Maybe Int
     }
 
 
@@ -68,6 +64,8 @@ type Msg
     | GotPreview String
     | GotChecksum String
     | DeleteFile
+    | DisplayMenu
+    | HideMenu
     | ImageDeleted (Result Http.Error ())
 
 
@@ -75,14 +73,26 @@ type Msg
 -- INIT
 
 
-init : Maybe String -> ( Model, Cmd Msg )
-init existingProfileImageUrl =
-    case existingProfileImageUrl of
-        Just url ->
-            ( Model Nothing (Just url), Cmd.none )
+init : Encode.Value -> ( Model, Cmd Msg )
+init flags =
+    ( case decodeValue flagsDecoder flags of
+        Ok model ->
+            model
 
-        Nothing ->
-            ( Model Nothing Nothing, Cmd.none )
+        Err _ ->
+            { file = Nothing
+            , checksum = Nothing
+            , signedId = Nothing
+            , uploadUrl = Nothing
+            , previewUrl = Nothing
+            , headers = Nothing
+            , status = Waiting
+            , existingImageUrl = Nothing
+            , displayMenu = False
+            , railsId = Nothing
+            }
+    , Cmd.none
+    )
 
 
 
@@ -98,33 +108,62 @@ view model =
                     div [ onClick SelectFile, class "h-16 bg-gray-200 border-gray-500 border-dotted border text-center flex items-center justify-center" ] [ text "Upload Photos" ]
 
                 Just url ->
-                    div [] [ img [ src url ] [] ]
+                    if model.displayMenu then
+                        renderMenu url
 
-        Just file ->
-            case file.status of
+                    else
+                        renderImage url
+
+        Just _ ->
+            case model.status of
                 Waiting ->
                     div [ onClick SelectFile, class "h-16 bg-gray-200 border-gray-500 border-dotted border text-center " ] [ text "Upload Photos" ]
 
+                RailsImageCreated ->
+                    case model.previewUrl of
+                        Just url ->
+                            if model.displayMenu then
+                                renderMenu url
+
+                            else
+                                renderImage url
+
+                        Nothing ->
+                            div [ onClick SelectFile, class "h-16 bg-gray-200 border-gray-500 border-dotted border text-center flex items-center justify-center" ] [ text "Upload Photos" ]
+
                 _ ->
-                    renderPreview file
+                    renderPreview model
 
 
-renderPreview : FileWithInfo -> Html Msg
+renderImage : String -> Html Msg
+renderImage url =
+    div [] [ img [ src url, onMouseEnter DisplayMenu, class "border-dotted border-gray-600 border rounded-t" ] [] ]
+
+
+renderMenu : String -> Html Msg
+renderMenu url =
+    div [ onMouseLeave HideMenu, style "cursor" "pointer" ]
+        [ img [ src url, class "border-dotted border-gray-600 border rounded-t" ] []
+        , div [ class "bg-gray-300 -mt-12 relative h-12 border-dotted border-gray-600 border text-sm text-center" ] [ a [ onClick SelectFile, class "text-sm" ] [ text "Upload new image?" ], a [ class "text-sm text-red-800", onClick DeleteFile ] [ text "Delete" ] ]
+        ]
+
+
+renderPreview : Model -> Html Msg
 renderPreview file =
     div [ class "bg-gray-200 border-gray-500 border-dotted border flex flex-wrap" ] [ previewImage file ]
 
 
-previewImage : FileWithInfo -> Html Msg
+previewImage : Model -> Html Msg
 previewImage file =
     case ( file.previewUrl, file.status ) of
         ( Just url, Uploading percentComplete ) ->
-            div [] [ img [ src url ] [], text (String.fromFloat percentComplete) ]
+            div [] [ img [ src url, class "rounded-t" ] [], text (String.fromFloat percentComplete) ]
 
         ( Just url, Waiting ) ->
-            div [] [ img [ src url ] [], text "Waiting" ]
+            div [] [ img [ src url, class "rounded-t" ] [], text "Waiting" ]
 
         ( Just url, _ ) ->
-            div [] [ img [ src url ] [], text "Complete", a [ class "text-sm text-red-800", onClick DeleteFile ] [ text "Delete" ] ]
+            div [] [ img [ src url, class "rounded-t" ] [], text "Complete" ]
 
         ( Nothing, Waiting ) ->
             div [] [ text "Loading" ]
@@ -142,9 +181,9 @@ previewImage file =
 -- the files to.
 
 
-updateFileWithInfoWithUrlUploadInfo : FileWithInfo -> FileIdentifyingInfo -> FileWithInfo
-updateFileWithInfoWithUrlUploadInfo fileWithInfo urlUploadInfo =
-    { fileWithInfo
+updateModelWithUrlUploadInfo : Model -> FileIdentifyingInfo -> Model
+updateModelWithUrlUploadInfo model urlUploadInfo =
+    { model
         | headers = Just urlUploadInfo.headers
         , uploadUrl = Just urlUploadInfo.url
         , signedId = Just urlUploadInfo.signedId
@@ -158,86 +197,44 @@ update msg model =
             case result of
                 Ok uploadUrlInfo ->
                     let
-                        originalFileWithInfoResult =
-                            model.file
+                        updatedModel =
+                            updateModelWithUrlUploadInfo model uploadUrlInfo
                     in
-                    case originalFileWithInfoResult of
-                        Nothing ->
-                            ( model, Cmd.none )
-
-                        Just originalFileWithInfo ->
-                            let
-                                updatedFileWithInfo =
-                                    updateFileWithInfoWithUrlUploadInfo originalFileWithInfo uploadUrlInfo
-                            in
-                            ( { model | file = Just updatedFileWithInfo }, uploadFile updatedFileWithInfo )
+                    ( updatedModel, uploadFile updatedModel )
 
                 Err _ ->
                     ( model, Cmd.none )
 
         GotFile selectedFile ->
             let
-                selectedFileWithInfo =
-                    initializeNewFileWithInfoFromFile selectedFile
-
                 filePreviewUrlRequest =
                     File.toUrl selectedFile
 
                 checksumRequest =
-                    buildChecksumFromFile selectedFileWithInfo
+                    buildChecksumFromFile selectedFile
             in
-            ( { model | file = Just selectedFileWithInfo }
+            ( { model | file = Just selectedFile }
             , Cmd.batch [ Task.perform GotChecksum checksumRequest, Task.perform GotPreview filePreviewUrlRequest ]
             )
 
         GotPreview url ->
-            let
-                oldFile =
-                    model.file
-            in
-            case oldFile of
-                Nothing ->
-                    ( model, Cmd.none )
-
-                Just originalFile ->
-                    ( { model | file = Just { originalFile | previewUrl = Just url } }, Cmd.none )
+            ( { model | previewUrl = Just url }, Cmd.none )
 
         GotChecksum checksum ->
             let
-                oldFile =
-                    model.file
+                newModel =
+                    { model | checksum = Just checksum }
             in
-            case oldFile of
-                Nothing ->
-                    ( model, Cmd.none )
-
-                Just originalFile ->
-                    let
-                        newFile =
-                            { originalFile | checksum = Just checksum }
-                    in
-                    ( { model | file = Just newFile }, requestUrl newFile )
+            ( newModel, requestUrl newModel )
 
         GotProgress progress ->
             case progress of
                 Http.Sending p ->
                     let
-                        oldFile =
-                            model.file
+                        newStatus =
+                            Uploading (Http.fractionSent p)
                     in
-                    case oldFile of
-                        Nothing ->
-                            ( model, Cmd.none )
-
-                        Just originalFile ->
-                            let
-                                newStatus =
-                                    Uploading (Http.fractionSent p)
-
-                                newFileWithUploadInfo =
-                                    { originalFile | status = newStatus }
-                            in
-                            ( { model | file = Just newFileWithUploadInfo }, Cmd.none )
+                    ( { model | status = newStatus }, Cmd.none )
 
                 Http.Receiving _ ->
                     ( model, Cmd.none )
@@ -249,95 +246,76 @@ update msg model =
             case result of
                 Ok _ ->
                     let
-                        oldFile =
-                            model.file
+                        newModel =
+                            { model | status = UploadComplete }
                     in
-                    case oldFile of
-                        Nothing ->
-                            ( model, Cmd.none )
-
-                        Just originalFile ->
-                            let
-                                updatedFile =
-                                    { originalFile | status = UploadComplete }
-                            in
-                            ( { model | file = Just updatedFile }, buildRailsImage updatedFile )
+                    ( newModel, buildRailsImage newModel )
 
                 Err _ ->
-                    ( updateFileStatus FailUpload model, Cmd.none )
+                    ( { model | status = FailUpload }, Cmd.none )
 
         ImageCreated result ->
             case result of
                 Ok id ->
-                    let
-                        oldFile =
-                            model.file
-                    in
-                    case oldFile of
-                        Nothing ->
-                            ( model, Cmd.none )
-
-                        Just originalFile ->
-                            let
-                                updatedFile =
-                                    { originalFile | status = RailsImageCreated, railsId = Just id }
-                            in
-                            ( { model | file = Just updatedFile }, Cmd.none )
+                    ( { model | status = RailsImageCreated, railsId = Just id }, Cmd.none )
 
                 Err _ ->
-                    ( updateFileStatus FailUpload model, Cmd.none )
+                    ( { model | status = FailUpload }, Cmd.none )
 
         DeleteFile ->
-            let
-                oldFile =
-                    model.file
-            in
-            case oldFile of
-                Just originalFile ->
-                    if originalFile.status == RailsImageCreated then
-                        ( model, deleteImage originalFile )
+            case ( model.file, model.railsId ) of
+                ( Just file, Just id ) ->
+                    ( model, deleteImage model )
 
-                    else
-                        ( { model | file = Nothing }, Cmd.none )
-
-                Nothing ->
-                    ( model, Cmd.none )
+                ( _, _ ) ->
+                    let
+                        newModel =
+                            { file = Nothing
+                            , checksum = Nothing
+                            , signedId = Nothing
+                            , uploadUrl = Nothing
+                            , previewUrl = Nothing
+                            , headers = Nothing
+                            , status = Waiting
+                            , existingImageUrl = Nothing
+                            , displayMenu = False
+                            , railsId = Nothing
+                            }
+                    in
+                    ( newModel, Cmd.none )
 
         ImageDeleted result ->
             case result of
                 Ok _ ->
-                    ( { model | file = Nothing }, Cmd.none )
+                    let
+                        newModel =
+                            { file = Nothing
+                            , checksum = Nothing
+                            , signedId = Nothing
+                            , uploadUrl = Nothing
+                            , previewUrl = Nothing
+                            , headers = Nothing
+                            , status = Waiting
+                            , existingImageUrl = Nothing
+                            , displayMenu = False
+                            , railsId = Nothing
+                            }
+                    in
+                    ( newModel, Cmd.none )
 
                 Err _ ->
-                    ( updateFileStatus FailDelete model, Cmd.none )
+                    ( { model | status = FailDelete }, Cmd.none )
+
+        DisplayMenu ->
+            ( { model | displayMenu = True }, Cmd.none )
+
+        HideMenu ->
+            ( { model | displayMenu = False }, Cmd.none )
 
 
-initializeNewFileWithInfoFromFile : File -> FileWithInfo
-initializeNewFileWithInfoFromFile file =
-    FileWithInfo file Nothing Nothing Nothing Nothing Nothing Waiting Nothing
-
-
-updateFileStatus : Status -> Model -> Model
-updateFileStatus newStatus originalModel =
-    let
-        oldFile =
-            originalModel.file
-    in
-    case oldFile of
-        Nothing ->
-            originalModel
-
-        Just originalFile ->
-            let
-                updatedFile =
-                    { originalFile | status = newStatus }
-            in
-            { originalModel | file = Just updatedFile }
-
-
-buildChecksumFromFile : FileWithInfo -> Task x String
-buildChecksumFromFile fileWithInfo =
-    Task.map buildChecksum (File.toBytes fileWithInfo.file)
+buildChecksumFromFile : File -> Task x String
+buildChecksumFromFile file =
+    Task.map buildChecksum (File.toBytes file)
 
 
 buildChecksum : Bytes -> String
@@ -355,16 +333,21 @@ buildChecksum fileBytes =
             ""
 
 
-requestUrl : FileWithInfo -> Cmd Msg
-requestUrl file =
-    Http.post
-        { url = "/rails/active_storage/direct_uploads"
-        , body = Http.jsonBody (urlRequest file)
-        , expect = Http.expectJson GotUploadUrl urlDecoder
-        }
+requestUrl : Model -> Cmd Msg
+requestUrl model =
+    case ( model.file, model.checksum ) of
+        ( Just file, Just checksum ) ->
+            Http.post
+                { url = "/rails/active_storage/direct_uploads"
+                , body = Http.jsonBody (urlRequest file checksum)
+                , expect = Http.expectJson GotUploadUrl urlDecoder
+                }
+
+        ( _, _ ) ->
+            Cmd.none
 
 
-buildRailsImage : FileWithInfo -> Cmd Msg
+buildRailsImage : Model -> Cmd Msg
 buildRailsImage fileInfo =
     Http.post
         { url = "/user_profile_images"
@@ -373,22 +356,27 @@ buildRailsImage fileInfo =
         }
 
 
-uploadFile : FileWithInfo -> Cmd Msg
-uploadFile fileWithInfo =
-    Http.request
-        { method = "PUT"
-        , url = Maybe.withDefault "" fileWithInfo.uploadUrl
-        , headers = Maybe.withDefault [] fileWithInfo.headers
-        , body = Http.fileBody fileWithInfo.file
-        , expect = Http.expectWhatever UploadFinished
-        , timeout = Nothing
-        , tracker = Just (File.name fileWithInfo.file)
-        }
+uploadFile : Model -> Cmd Msg
+uploadFile model =
+    case ( model.uploadUrl, model.file, model.headers ) of
+        ( Just uploadUrl, Just file, Just headers ) ->
+            Http.request
+                { method = "PUT"
+                , url = uploadUrl
+                , headers = headers
+                , body = Http.fileBody file
+                , expect = Http.expectWhatever UploadFinished
+                , timeout = Nothing
+                , tracker = Just (File.name file)
+                }
+
+        ( _, _, _ ) ->
+            Cmd.none
 
 
-deleteImage : FileWithInfo -> Cmd Msg
-deleteImage fileWithInfo =
-    case fileWithInfo.railsId of
+deleteImage : Model -> Cmd Msg
+deleteImage model =
+    case model.railsId of
         Just id ->
             Http.request
                 { method = "DELETE"
@@ -414,26 +402,46 @@ urlDecoder =
         )
 
 
+flagsDecoder : Decoder Model
+flagsDecoder =
+    map2
+        (\url id ->
+            { file = Nothing
+            , checksum = Nothing
+            , signedId = Nothing
+            , uploadUrl = Nothing
+            , previewUrl = Nothing
+            , headers = Nothing
+            , status = Waiting
+            , existingImageUrl = Just url
+            , displayMenu = False
+            , railsId = Just id
+            }
+        )
+        (field "url" string)
+        (field "id" int)
+
+
 imageDecoder : Decoder Int
 imageDecoder =
     field "id" int
 
 
-urlRequest : FileWithInfo -> Encode.Value
-urlRequest fileWithInfo =
+urlRequest : File -> String -> Encode.Value
+urlRequest file checksum =
     Encode.object
         [ ( "blob"
           , Encode.object
-                [ ( "filename", Encode.string (File.name fileWithInfo.file) )
-                , ( "content_type", Encode.string (File.mime fileWithInfo.file) )
-                , ( "byte_size", Encode.string (String.fromInt (File.size fileWithInfo.file)) )
-                , ( "checksum", Encode.string (Maybe.withDefault "" fileWithInfo.checksum) )
+                [ ( "filename", Encode.string (File.name file) )
+                , ( "content_type", Encode.string (File.mime file) )
+                , ( "byte_size", Encode.string (String.fromInt (File.size file)) )
+                , ( "checksum", Encode.string checksum )
                 ]
           )
         ]
 
 
-imageParams : FileWithInfo -> Encode.Value
+imageParams : Model -> Encode.Value
 imageParams fileWithInfo =
     let
         signedId =
@@ -449,24 +457,19 @@ imageParams fileWithInfo =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    case model.file of
-        Nothing ->
+    case ( model.status, model.file ) of
+        ( Uploading _, Just file ) ->
+            Http.track (File.name file) GotProgress
+
+        ( _, _ ) ->
             Sub.none
-
-        Just fileWithInfo ->
-            case fileWithInfo.status of
-                Uploading _ ->
-                    Http.track (File.name fileWithInfo.file) GotProgress
-
-                _ ->
-                    Sub.none
 
 
 
 -- MAIN
 
 
-main : Program (Maybe String) Model Msg
+main : Program Encode.Value Model Msg
 main =
     Browser.element
         { init = init

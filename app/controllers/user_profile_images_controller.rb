@@ -1,7 +1,7 @@
 class UserProfileImagesController < ApplicationController
   def create
-    @image = current_user.images.build(image_params)
-    @image.imageable = current_user
+    @image = current_user.build_profile_image(image_params)
+    @image.user = current_user
     if @image.save
       render json: @image
     else

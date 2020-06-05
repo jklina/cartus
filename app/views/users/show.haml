@@ -3,7 +3,7 @@
     .user-header.flex.justify-between.mb-4
       %h3.text-3xl.inline-block= @user.full_name
       = link_to "Edit", edit_user_path(@user), class: "text-sm self-end mb-1"
-    .user-image-uploader.bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t{ data: { profile_image: url_for(@user.profile_image_url) }}
+    .user-image-uploader.bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t{ data: { profile_image: url_for(@user.profile_image_url), id: @user.profile_image.id }}
     .user-info.bg-gray-300.px-5.py-5.border-b.border-r.border-l.border-dotted.border-gray-600.rounded-b
 
     #my-elm-container
