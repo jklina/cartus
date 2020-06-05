@@ -34,6 +34,6 @@ class User < ApplicationRecord
   end
 
   def profile_image_url
-    profile_image.image.variant(resize_to_fill: [385, 289, {gravity: "Center"}])
+    profile_image&.image&.variant(resize_to_fill: [385, 289, {gravity: "Center"}])
   end
 end

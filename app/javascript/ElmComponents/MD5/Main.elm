@@ -12,8 +12,7 @@ hexadecimal characters. More information about the MD5 algorithm can be found
 
 -}
 
-import Array exposing (Array)
-import Bitwise exposing (and, complement, or, shiftLeftBy, shiftRightBy, shiftRightZfBy)
+import Bitwise exposing (and, complement, or, shiftLeftBy, shiftRightZfBy)
 import Bytes exposing (Bytes, Endianness(..))
 import Bytes.Decode as Decode exposing (Decoder, Step(..))
 import Bytes.Encode as Encode

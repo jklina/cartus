@@ -101,11 +101,11 @@ init flags =
 
 view : Model -> Html Msg
 view model =
-    case model.file of
+    case model.previewUrl of
         Nothing ->
             case model.existingImageUrl of
                 Nothing ->
-                    div [ onClick SelectFile, class "h-16 bg-gray-200 border-gray-500 border-dotted border text-center flex items-center justify-center" ] [ text "Upload Photos" ]
+                    renderImageSelectBox
 
                 Just url ->
                     if model.displayMenu then
@@ -114,25 +114,25 @@ view model =
                     else
                         renderImage url
 
-        Just _ ->
+        Just previewUrl ->
             case model.status of
                 Waiting ->
-                    div [ onClick SelectFile, class "h-16 bg-gray-200 border-gray-500 border-dotted border text-center " ] [ text "Upload Photos" ]
+                    renderImageSelectBox
 
                 RailsImageCreated ->
-                    case model.previewUrl of
-                        Just url ->
-                            if model.displayMenu then
-                                renderMenu url
+                    if model.displayMenu then
+                        renderMenu previewUrl
 
-                            else
-                                renderImage url
-
-                        Nothing ->
-                            div [ onClick SelectFile, class "h-16 bg-gray-200 border-gray-500 border-dotted border text-center flex items-center justify-center" ] [ text "Upload Photos" ]
+                    else
+                        renderImage previewUrl
 
                 _ ->
-                    renderPreview model
+                    renderPreview previewUrl model.status
+
+
+renderImageSelectBox : Html Msg
+renderImageSelectBox =
+    div [ onClick SelectFile, class "h-16 bg-gray-200 border-gray-500 border-dotted border text-center flex items-center justify-center" ] [ text "Upload Photos" ]
 
 
 renderImage : String -> Html Msg
@@ -148,28 +148,19 @@ renderMenu url =
         ]
 
 
-renderPreview : Model -> Html Msg
-renderPreview file =
-    div [ class "bg-gray-200 border-gray-500 border-dotted border flex flex-wrap" ] [ previewImage file ]
+renderPreview : String -> Status -> Html Msg
+renderPreview url status =
+    div [ class "bg-gray-200 border-gray-500 border-dotted border flex flex-wrap" ] [ previewImage url status ]
 
 
-previewImage : Model -> Html Msg
-previewImage file =
-    case ( file.previewUrl, file.status ) of
-        ( Just url, Uploading percentComplete ) ->
+previewImage : String -> Status -> Html Msg
+previewImage url status =
+    case status of
+        Uploading percentComplete ->
             div [] [ img [ src url, class "rounded-t" ] [], text (String.fromFloat percentComplete) ]
 
-        ( Just url, Waiting ) ->
-            div [] [ img [ src url, class "rounded-t" ] [], text "Waiting" ]
-
-        ( Just url, _ ) ->
+        _ ->
             div [] [ img [ src url, class "rounded-t" ] [], text "Complete" ]
-
-        ( Nothing, Waiting ) ->
-            div [] [ text "Loading" ]
-
-        ( Nothing, _ ) ->
-            text "Nothing"
 
 
 
@@ -263,11 +254,11 @@ update msg model =
                     ( { model | status = FailUpload }, Cmd.none )
 
         DeleteFile ->
-            case ( model.file, model.railsId ) of
-                ( Just file, Just id ) ->
-                    ( model, deleteImage model )
+            case  model.railsId  of
+                Just railsId ->
+                    ( model, deleteImage railsId )
 
-                ( _, _ ) ->
+                Nothing ->
                     let
                         newModel =
                             { file = Nothing
@@ -374,22 +365,18 @@ uploadFile model =
             Cmd.none
 
 
-deleteImage : Model -> Cmd Msg
-deleteImage model =
-    case model.railsId of
-        Just id ->
-            Http.request
-                { method = "DELETE"
-                , url = "/user_profile_images/" ++ String.fromInt id
-                , expect = Http.expectWhatever ImageDeleted
-                , timeout = Nothing
-                , headers = []
-                , body = Http.emptyBody
-                , tracker = Nothing
-                }
+deleteImage : Int -> Cmd Msg
+deleteImage railsId =
+    Http.request
+        { method = "DELETE"
+        , url = "/user_profile_images/" ++ String.fromInt railsId
+        , expect = Http.expectWhatever ImageDeleted
+        , timeout = Nothing
+        , headers = []
+        , body = Http.emptyBody
+        , tracker = Nothing
+        }
 
-        Nothing ->
-            Cmd.none
 
 
 urlDecoder : Decoder FileIdentifyingInfo
