@@ -36,4 +36,8 @@ class User < ApplicationRecord
   def profile_image_url
     profile_image&.image&.variant(resize_to_fill: [385, 289, {gravity: "Center"}])
   end
+
+  def friends_with?(user)
+
+  end
 end

@@ -1,0 +1,104 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Save file",
+            "command": "${command:workbench.action.files.save}",
+        },
+        {
+            "label": "Run all tests",
+            "type": "shell",
+            "command": "bundle exec rspec spec",
+            "group": "test",
+            "dependsOrder":"sequence", 
+            "dependsOn": ["Save file"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "runOptions": {"reevaluateOnRerun": false}
+        },
+        {
+            "label": "Run file tests",
+            "type": "shell",
+            "command": "bundle exec rspec ${file}",
+            "group": "test",
+            "dependsOrder":"sequence", 
+            "dependsOn": ["Save file"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "runOptions": {"reevaluateOnRerun": false}
+        },
+        {
+            "label": "Run test on line number",
+            "type": "shell",
+            "command": "bundle exec rspec ${file}:${lineNumber}",
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+        {
+            "label": "Save and run test on line number",
+            "group": "test",
+            "dependsOrder":"sequence", 
+            "dependsOn": ["Save file", "Run test on line number"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "runOptions": {"reevaluateOnRerun": false}
+        },
+        {
+            "label": "Save and run file tests",
+            "group": "test",
+            "dependsOrder":"sequence", 
+            "dependsOn": ["Save file", "Run file tests"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "runOptions": {"reevaluateOnRerun": false}
+        },
+        {
+            "label": "Save and run all tests",
+            "group": "test",
+            "dependsOrder":"sequence", 
+            "dependsOn": ["Save file", "Run all tests"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "runOptions": {"reevaluateOnRerun": false}
+        },
+    ]
+}

@@ -19,6 +19,8 @@
                 method: :delete
             -else
               = link_to "Sign in", sign_in_path, class: "block"
+    - if flash[:notice]
+      %div.flash.bg-green-300.p-4.text-green-800.border-b.border-green-800.border-dotted= flash[:notice]
     = yield
     %footer.flex.bg-gray-900.text-white.px-2.py-3.justify-between.bg-indigo-900
       .p This is the footer.

@@ -24,6 +24,6 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :images
 
   def preview_image
-    images.first.image.variant(resize_to_fill: [1000, 220, {gravity: "Center"}])
+    images.first.image.variant(resize_to_fill: [1000, 220, { gravity: "Center" }])
   end
 end

@@ -5,6 +5,10 @@
       = link_to "Edit", edit_user_path(@user), class: "text-sm self-end mb-1"
     .user-image-uploader.bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t{ data: { profile_image: url_for(@user.profile_image_url), id: @user.profile_image&.id }}
     .user-info.bg-gray-300.px-5.py-5.border-b.border-r.border-l.border-dotted.border-gray-600.rounded-b
+      - if current_user.friends_with?(@user)
+        %span Friends
+      -else 
+        = button_to("Send Friend Request", relationships_path, method: :post, params: { relationship: { related_id: @user.id } })
 
     #my-elm-container
   .col-span-2
