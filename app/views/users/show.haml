@@ -2,8 +2,17 @@
   .h-screen.flex.flex-col.mr-4.col-span-1
     .user-header.flex.justify-between.mb-4
       %h3.text-3xl.inline-block= @user.full_name
-      = link_to(inline_svg_tag("icons/edit.svg"), edit_user_path(@user), class: "text-sm self-end mb-1")
-    .user-image-uploader.bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t{ data: { profile_image: url_for(@user.profile_image_url), id: @user.profile_image&.id }}
+      - render_if_user_owner do
+        = link_to(inline_svg_tag("icons/edit.svg"), edit_user_path(@user), class: "text-sm self-end mb-1")
+    - if @user == current_user
+      .user-image-uploader.bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t{ data: { profile_image: url_for(@user.profile_image_url), id: @user.profile_image&.id }}
+    - elsif @user.profile_image.blank?
+      .bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t
+        = inline_svg_tag("icons/user.svg")
+    - else
+      .bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t
+        = image_tag(@user.profile_image_url)
+
     .user-info.bg-gray-300.px-5.py-5.border-b.border-r.border-l.border-dotted.border-gray-600.rounded-b.flex.flex-row-reverse
       - if current_user.friends_with?(@user)
         %span.text-xs Friends

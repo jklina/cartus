@@ -5,13 +5,15 @@
     %span.block.text-xs.mb-3= "#{time_ago_in_words(post.created_at)} ago"
     %p= post.body
   .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.justify-between
-    = link_to(inline_svg_tag("icons/edit.svg"), edit_post_path(post))
-    = link_to(inline_svg_tag("icons/trash-2.svg"), post_path(post), class: "text-sm text-red-800", method: :delete)
+    - render_if_user_owner do
+      = link_to(inline_svg_tag("icons/edit.svg"), edit_post_path(post))
+      = link_to(inline_svg_tag("icons/trash-2.svg"), post_path(post), class: "text-sm text-red-800", method: :delete)
 - else
   .bg-gray-300.px-5.py-5.border-t.border-r.border-l.border-dotted.border-gray-600.rounded-t
     %span.block.text-xs.mb-3= "#{time_ago_in_words(post.created_at)} ago"
     %p= post.body
   .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.justify-between
-    = link_to "Edit", edit_post_path(post), class: "text-sm"
-    = link_to "Delete", post_path(post), class: "text-sm text-red-800", method: :delete
+    - render_if_user_owner do
+      = link_to "Edit", edit_post_path(post), class: "text-sm"
+      = link_to "Delete", post_path(post), class: "text-sm text-red-800", method: :delete
 

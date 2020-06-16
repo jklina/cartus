@@ -4,6 +4,7 @@ import Base64
 import Browser
 import Bytes exposing (Bytes)
 import ElmComponents.MD5.Main as MD5
+import FeatherIcons
 import File exposing (File)
 import File.Select as Select
 import Hex.Convert
@@ -132,7 +133,7 @@ view model =
 
 renderImageSelectBox : Html Msg
 renderImageSelectBox =
-    div [ onClick SelectFile, class "h-16 bg-gray-200 border-gray-500 border-dotted border text-center flex items-center justify-center" ] [ text "Upload Photos" ]
+    div [ onClick SelectFile, class "h-16 bg-gray-200 border-gray-600 border-dotted border text-center flex items-center justify-center" ] [ FeatherIcons.upload |> FeatherIcons.withStrokeWidth 1 |> FeatherIcons.toHtml [], text "Upload Photos" ]
 
 
 renderImage : String -> Html Msg
@@ -150,7 +151,7 @@ renderMenu url =
 
 renderPreview : String -> Status -> Html Msg
 renderPreview url status =
-    div [ class "bg-gray-200 border-gray-500 border-dotted border flex flex-wrap" ] [ previewImage url status ]
+    div [ class "bg-gray-200 border-gray-600 border-dotted border flex flex-wrap" ] [ previewImage url status ]
 
 
 previewImage : String -> Status -> Html Msg
@@ -254,7 +255,7 @@ update msg model =
                     ( { model | status = FailUpload }, Cmd.none )
 
         DeleteFile ->
-            case  model.railsId  of
+            case model.railsId of
                 Just railsId ->
                     ( model, deleteImage railsId )
 
@@ -376,7 +377,6 @@ deleteImage railsId =
         , body = Http.emptyBody
         , tracker = Nothing
         }
-
 
 
 urlDecoder : Decoder FileIdentifyingInfo
