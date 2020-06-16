@@ -1,4 +1,3 @@
-
 require "rails_helper"
 
 describe "creating a relationship", type: :feature do
@@ -7,11 +6,11 @@ describe "creating a relationship", type: :feature do
     related = create(:user)
     visit user_path(related, as: user)
 
-    click_button "Send Friend Request"
-    related.reload
+    click_link "add-friend"
 
     expect(page).to have_current_path(user_path(related))
     expect(page).to have_content("An invitation has been sent")
+    expect(page).to have_content("Invited")
   end
 
   it "doesn't let a use edit another use's post" do

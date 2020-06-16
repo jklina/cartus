@@ -24,6 +24,9 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :images, dependent: :destroy
+  has_many :relationships, foreign_key: :relatee_id, dependent: :destroy
+  has_many :sent_invitations, -> { where(accepted: false) }, foreign_key: :relatee_id, class_name: "Relationship"
+  has_many :invited_friends, through: :sent_invitations, source: :related
   has_one :profile_image,
     as: :imageable,
     dependent: :destroy,
@@ -38,6 +41,9 @@ class User < ApplicationRecord
   end
 
   def friends_with?(user)
+  end
 
+  def invited?(user)
+    invited_friends.where(id: user.id).exists?
   end
 end

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :relationship do
-    related { "" }
-    related { "" }
+    relatee { user }
+    related { user }
   end
 end

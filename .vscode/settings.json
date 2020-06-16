@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "ruby.format": "standard",
+  "ruby.lint": {
+    "standard": false
+  }
+}

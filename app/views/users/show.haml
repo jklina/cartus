@@ -2,13 +2,15 @@
   .h-screen.flex.flex-col.mr-4.col-span-1
     .user-header.flex.justify-between.mb-4
       %h3.text-3xl.inline-block= @user.full_name
-      = link_to "Edit", edit_user_path(@user), class: "text-sm self-end mb-1"
+      = link_to(inline_svg_tag("icons/edit.svg"), edit_user_path(@user), class: "text-sm self-end mb-1")
     .user-image-uploader.bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t{ data: { profile_image: url_for(@user.profile_image_url), id: @user.profile_image&.id }}
-    .user-info.bg-gray-300.px-5.py-5.border-b.border-r.border-l.border-dotted.border-gray-600.rounded-b
+    .user-info.bg-gray-300.px-5.py-5.border-b.border-r.border-l.border-dotted.border-gray-600.rounded-b.flex.flex-row-reverse
       - if current_user.friends_with?(@user)
-        %span Friends
+        %span.text-xs Friends
+      - elsif current_user.invited?(@user)
+        %span.text-xs Invited
       -else 
-        = button_to("Send Friend Request", relationships_path, method: :post, params: { relationship: { related_id: @user.id } })
+        = link_to(inline_svg_tag("icons/plus-circle.svg"), relationships_path(params: { relationship: { related_id: @user.id } }), method: :post, id: "add-friend" )
 
     #my-elm-container
   .col-span-2
