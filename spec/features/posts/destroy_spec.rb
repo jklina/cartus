@@ -8,7 +8,7 @@ describe "destroying a post", type: :feature do
 
     expect(page).to have_content("Post content")
 
-    click_link "Delete"
+    click_link "delete-post"
 
     expect(page).to have_current_path(user_path(user))
     expect(page).to_not have_content("Post content")
