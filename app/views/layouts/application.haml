@@ -8,13 +8,13 @@
     = javascript_pack_tag 'application', media: 'all'
     = stylesheet_link_tag 'application', media: 'all'
   %body.bg-gray-300.text-gray-700
-    %header.flex.text-white.px-2.py-3.justify-between.bg-indigo-900
+    %header.flex.text-white.px-8.py-3.justify-between.bg-indigo-900
       %h1.text-2xl= link_to "Openbook", root_path
       %nav.flex.items-center
         %ul.block
           %li
             - if signed_in?
-              = link_to "Home", timeline_path
+              = link_to "Home", timeline_path, class: "mr-6"
               = link_to "Sign Out",
                 sign_out_path,
                 method: :delete
