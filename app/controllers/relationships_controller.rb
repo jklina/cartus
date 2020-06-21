@@ -17,7 +17,6 @@ class RelationshipsController < ApplicationController
   private
 
   def relationship_params
-    pp params
     params.require(:relationship).permit(:related_id)
   end
 end

@@ -2,9 +2,9 @@
   .min-h-screen.flex.flex-col.mr-4.col-span-1
     .user-header.flex.justify-between.mb-4
       %h3.text-3xl.inline-block= @user.full_name
-      - render_if_user_owner do
+      - if policy(@user).update?
         = link_to(inline_svg_tag("icons/edit.svg"), edit_user_path(@user), class: "text-sm self-end mb-1")
-    - if @user == current_user
+    - if policy(@user).update?
       .user-image-uploader.bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t{ data: { profile_image: url_for(@user.profile_image_url), id: @user.profile_image&.id }}
     - elsif @user.profile_image.blank?
       .bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t
