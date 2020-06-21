@@ -1,2 +1,7 @@
-.bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.flex-row-reverse
-  = inline_svg_tag("icons/thumbs-up.svg")
+- if policy(post).update?
+  .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.justify-between
+    = link_to(inline_svg_tag("icons/edit.svg"), edit_post_path(post))
+    = link_to(inline_svg_tag("icons/trash-2.svg"), post_path(post), class: "text-sm text-red-800", id: "delete-post", method: :delete)
+- else
+  .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.flex-row-reverse
+    = inline_svg_tag("icons/thumbs-up.svg")
