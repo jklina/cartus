@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get "timeline", to: "timeline#index"
+  root to: "timeline#index"
+
   get "home/index"
-  root to: "home#index"
 
   resources :users, only: [:show, :edit, :update] do
     resources :posts, only: :show

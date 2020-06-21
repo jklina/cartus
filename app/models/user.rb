@@ -24,9 +24,14 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :images, dependent: :destroy
-  has_many :relationships, foreign_key: :relatee_id, dependent: :destroy
+  has_many :initiated_relationships, -> { where(accepted: true) }, foreign_key: :relatee_id, dependent: :destroy, class_name: "Relationship"
+  has_many :accepted_relationships, -> { where(accepted: true) }, foreign_key: :related_id, dependent: :destroy, class_name: "Relationship"
   has_many :sent_invitations, -> { where(accepted: false) }, foreign_key: :relatee_id, class_name: "Relationship"
   has_many :invited_friends, through: :sent_invitations, source: :related
+  has_many :initiated_friends, through: :initiated_relationships, source: :related, class_name: "User"
+  has_many :accepted_friends, through: :accepted_relationships, source: :relatee, class_name: "User"
+  has_many :initiated_friends_posts, through: :initiated_friends, source: :posts
+  has_many :accepted_friends_posts, through: :accepted_friends, source: :posts
   has_one :profile_image,
     as: :imageable,
     dependent: :destroy,
@@ -40,10 +45,29 @@ class User < ApplicationRecord
     profile_image&.image&.variant(resize_to_fill: [385, 289, {gravity: "Center"}])
   end
 
+  def post_thumbnail_url
+    profile_image&.image&.variant(resize_to_fill: [240, 240, {gravity: "Center"}])
+  end
+
   def friends_with?(user)
+    friends_ids.include?(user.id)
   end
 
   def invited?(user)
     invited_friends.where(id: user.id).exists?
+  end
+
+  def friends_posts
+    Post.where(user_id: friends_ids)
+  end
+
+  private
+
+  def friends_ids
+    relationships.pluck(:related_id, :relatee_id).flatten.uniq
+  end
+
+  def relationships
+    initiated_relationships.or(accepted_relationships)
   end
 end

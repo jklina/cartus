@@ -1,0 +1,8 @@
+- if post.user.post_thumbnail_url.present?
+  .post-user-image.w-24.flex-none.px-5.py-5
+    = image_tag(post.user.post_thumbnail_url, class: "rounded-full")
+.post-info.px-5.py-5
+  .post-body-header.mb-3
+    = link_to("#{post.user.full_name}", user_path(post.user), class: "text-xs inline underline")
+    %span.text-xs= " posted #{time_ago_in_words(post.created_at)} ago"
+  %p= post.body

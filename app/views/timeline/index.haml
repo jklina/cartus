@@ -1,0 +1,20 @@
+.container.lg.mx-auto.px-5.min-h-screen.py-5.grid.grid-cols-3.gap-4
+  .min-h-screen.flex.flex-col.mr-4.col-span-1
+    .user-header.flex.justify-between.mb-4
+      %h3.text-3xl.inline-block= @user.full_name
+      = link_to(inline_svg_tag("icons/edit.svg"), edit_user_path(@user), class: "text-sm self-end mb-1")
+    .user-image-uploader.bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t{ data: { profile_image: url_for(@user.profile_image_url), id: @user.profile_image&.id }}
+
+    .user-info.bg-gray-300.px-5.py-5.border-b.border-r.border-l.border-dotted.border-gray-600.rounded-b.flex.flex-row-reverse
+      %span.text-xs= @user.first_name
+    #my-elm-container
+  .col-span-2
+    .flex.justify-between.content-center.mb-4
+      %h3.text-3xl= "Timeline"
+      = link_to "New Post", new_post_path, class: "bg-gray-300 block py-2 px-4 border-2 border-indigo-800 rounded-lg text-indigo-800 font-bold"
+    .mb-4
+      - @posts.each do |post|
+        = render partial: "post", locals: {post: post}
+- content_for :tail_scripts do
+  = javascript_pack_tag "post_gallery"
+  = javascript_pack_tag "user_image_uploader"

@@ -14,6 +14,7 @@ gem "simple_form"
 gem "webpacker", "~> 4.x"
 gem "image_processing"
 gem "inline_svg"
+gem "pundit"
 
 group :test do
   gem "shoulda-matchers"
@@ -25,6 +26,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "standard"
+  gem "pry-rails"
 end
 
 group :development do
