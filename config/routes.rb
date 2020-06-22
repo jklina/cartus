@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts, except: :show
-  resources :relationships, only: [:create]
+  resources :invites, except: [:show]
   resources :post_images, only: [:create, :destroy]
   resources :user_profile_images, only: [:create, :destroy]
 end

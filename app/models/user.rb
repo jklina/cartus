@@ -27,6 +27,7 @@ class User < ApplicationRecord
   has_many :initiated_relationships, -> { where(accepted: true) }, foreign_key: :relatee_id, dependent: :destroy, class_name: "Relationship"
   has_many :accepted_relationships, -> { where(accepted: true) }, foreign_key: :related_id, dependent: :destroy, class_name: "Relationship"
   has_many :sent_invitations, -> { where(accepted: false) }, foreign_key: :relatee_id, class_name: "Relationship"
+  has_many :received_invitations, -> { where(accepted: false) }, foreign_key: :related_id, class_name: "Relationship"
   has_many :invited_friends, through: :sent_invitations, source: :related
   has_many :initiated_friends, through: :initiated_relationships, source: :related, class_name: "User"
   has_many :accepted_friends, through: :accepted_relationships, source: :relatee, class_name: "User"
@@ -36,6 +37,10 @@ class User < ApplicationRecord
     as: :imageable,
     dependent: :destroy,
     class_name: "Image"
+
+  def self.searchable_columns
+    [:first_name, :last_name]
+  end
 
   def full_name
     "#{first_name} #{last_name}"

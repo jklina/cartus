@@ -19,7 +19,7 @@
       - elsif current_user.invited?(@user)
         %span.text-xs Invited
       -else 
-        = link_to(inline_svg_tag("icons/plus-circle.svg"), relationships_path(params: { relationship: { related_id: @user.id } }), method: :post, id: "add-friend" )
+        = link_to(inline_svg_tag("icons/plus-circle.svg"), invites_path(params: { relationship: { related_id: @user.id } }), method: :post, id: "add-friend" )
 
     #my-elm-container
   .col-span-2

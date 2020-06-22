@@ -15,6 +15,7 @@ gem "webpacker", "~> 4.x"
 gem "image_processing"
 gem "inline_svg"
 gem "pundit"
+gem "textacular"
 
 group :test do
   gem "shoulda-matchers"
