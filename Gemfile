@@ -16,6 +16,7 @@ gem "image_processing"
 gem "inline_svg"
 gem "pundit"
 gem "textacular"
+gem "aws-sdk-s3"
 
 group :test do
   gem "shoulda-matchers"
