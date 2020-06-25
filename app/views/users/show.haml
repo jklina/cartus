@@ -13,13 +13,16 @@
       .bg-gray-400.mt-4border.border-dotted.border-gray-600.rounded-t
         = image_tag(@user.profile_image_url)
 
-    .user-info.bg-gray-300.px-5.py-5.border-b.border-r.border-l.border-dotted.border-gray-600.rounded-b.flex.flex-row-reverse
-      - if current_user.friends_with?(@user)
-        %span.text-xs Friends
-      - elsif current_user.invited?(@user)
-        %span.text-xs Invited
-      -else 
-        = link_to(inline_svg_tag("icons/plus-circle.svg"), invites_path(params: { relationship: { related_id: @user.id } }), method: :post, id: "add-friend" )
+    .user-info.bg-gray-300.px-5.py-5.border-b.border-r.border-l.border-dotted.border-gray-600.rounded-b.flex.justify-between
+      .traits
+        %span= @user.gender.titleize
+      .relationship.flex.flex-row-reverse
+        - if current_user.friends_with?(@user)
+          %span.text-xs Friends
+        - elsif current_user.invited?(@user)
+          %span.text-xs Invited
+        -else 
+          = link_to(inline_svg_tag("icons/plus-circle.svg"), invites_path(params: { relationship: { related_id: @user.id } }), method: :post, id: "add-friend" )
 
     #my-elm-container
   .col-span-2

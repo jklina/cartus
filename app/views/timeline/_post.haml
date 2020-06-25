@@ -1,4 +1,4 @@
-.mb-4
+.mb-4.shadow-lg
 - if post.images.present?
   = link_to(image_tag(url_for(post.preview_image), class: "preview-image rounded-t"), user_post_path(@user, post))
   .bg-gray-300.border-r.border-l.border-dotted.border-gray-600.flex

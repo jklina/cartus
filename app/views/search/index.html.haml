@@ -1,0 +1,10 @@
+.container.lg.mx-auto.px-5.min-h-screen.py-5
+  .min-h-screen
+    %h3.text-3xl Search Results
+    - @users.each do |user|
+      .received-invitation.px-4.py-4.h-20.flex.justify-between{ class: cycle("", "bg-gray-400")}
+        .info
+          = image_tag(url_for(user.post_thumbnail_url), class: "h-12 rounded-full inline-block mr-4")
+          %span= user.full_name
+        .actions
+          = link_to "View", user, class: "inline-block py-2 px-4 border-2 border-indigo-800 rounded-lg text-indigo-800 font-bold"

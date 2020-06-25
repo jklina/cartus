@@ -9,4 +9,14 @@
     = f.input :last_name,
       placeholder: "Appleseed",
       input_html: { class: "bg-gray-200 border border-gray-500 text-indigo-800 p-3 rounded w-full outline-none" }
+    = f.input :birthday,
+      input_html: { class: "bg-gray-200 border border-gray-500 text-indigo-800 p-3 rounded outline-none" },
+      label_html: { class: "block" },
+      start_year: Date.today.year - 110,
+      end_year: Date.today.year - 18,
+      default: Date.today
+    = f.input :gender,
+      collection: User.genders.keys,
+      label_html: { class: "block"},
+      input_html: { class: "bg-gray-200 border border-gray-500 text-indigo-800 p-3 rounded outline-none"}
     = f.submit "Update Profile", class: "block w-full mt-4 py-2 border-2 border-indigo-800 rounded-lg text-indigo-800 font-bold bg-gray-300"

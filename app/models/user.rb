@@ -8,6 +8,7 @@
 #  email              :string           not null
 #  encrypted_password :string(128)      not null
 #  first_name         :string
+#  gender             :integer
 #  last_name          :string
 #  remember_token     :string(128)      not null
 #  created_at         :datetime         not null
@@ -37,6 +38,8 @@ class User < ApplicationRecord
     as: :imageable,
     dependent: :destroy,
     class_name: "Image"
+
+  enum gender: {male: 0, female: 1}
 
   def self.searchable_columns
     [:first_name, :last_name]
