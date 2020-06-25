@@ -15,7 +15,7 @@
 
     .user-info.bg-gray-300.px-5.py-5.border-b.border-r.border-l.border-dotted.border-gray-600.rounded-b.flex.justify-between
       .traits
-        %span= @user.gender.titleize
+        %span= @user.gender&.titleize
       .relationship.flex.flex-row-reverse
         - if current_user.friends_with?(@user)
           %span.text-xs Friends
