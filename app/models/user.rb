@@ -24,6 +24,7 @@ class User < ApplicationRecord
   include Clearance::User
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :reactions, dependent: :destroy
   has_many :images, dependent: :destroy
   has_many :initiated_relationships, -> { where(accepted: true) }, foreign_key: :relatee_id, dependent: :destroy, class_name: "Relationship"

@@ -1,0 +1,21 @@
+.comment.mb-4
+  .bg-gray-300.border-t.border-r.border-l.border-dotted.border-gray-600.rounded-t.flex
+    - if comment.user.post_thumbnail_url.present?
+      .comment-user-image.w-24.flex-none.px-5.py-5
+        = image_tag(comment.user.post_thumbnail_url, class: "rounded-full")
+    .comment-info.px-5.py-5
+      .comment-body-header.mb-3
+        = link_to("#{comment.user.full_name}", user_path(comment.user), class: "text-xs inline underline")
+        %span.text-xs= " commented #{time_ago_in_words(comment.created_at)} ago"
+      %p= comment.body
+  .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.flex-row-reverse
+    .actions.flex
+      - if policy(comment).update?
+        = link_to(inline_svg_tag("icons/edit.svg"), edit_comment_path(comment), class: "mr-2")
+        = link_to(inline_svg_tag("icons/trash-2.svg"), comment_path(comment), class: "text-sm text-red-800", id: "delete-comment", method: :delete)
+      - else
+        %span.mr-2= comment.reactions.size
+        - if current_user.reaction_to(comment)
+          = link_to(inline_svg_tag("icons/thumbs-up.svg", class: "text-green-800"), reaction_path(current_user.reaction_to(comment)), method: :delete, id: "remove-like" )
+        - else
+          = link_to(inline_svg_tag("icons/thumbs-up.svg"), reactions_path(params: { reaction: { sentiment: :like, content_type: "Comment", content_id: comment.id }}), method: :post, id: "like" )

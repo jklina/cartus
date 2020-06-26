@@ -21,6 +21,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :images, as: :imageable, dependent: :destroy
   has_many :reactions, as: :content, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
 
   accepts_nested_attributes_for :images
 

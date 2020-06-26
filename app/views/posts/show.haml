@@ -5,6 +5,15 @@
   .gallery.flex.flex-row
     - @post.images.each do |image|
       = image_tag(url_for(image.gallery_preview), class: "preview-image rounded-t", class: "mr-4 mb-4")
-
-  .test
+  .post-content
     %p= @post.body
+  .new-comment.mt-4
+    = simple_form_for @comment do |f|
+      = f.input :body, placeholder: "Do you have something to say on the Internet?", input_html: { class: "bg-gray-200 border border-gray-500 text-indigo-800 p-3 rounded w-full outline-none" }, label: "Comment"
+      = f.input :commentable_type, as: :hidden, input_html: { value: "Post" }
+      = f.input :commentable_id, as: :hidden, input_html: { value: @post.id }
+      = f.submit "Submit", class: "block w-full mt-4 py-2 border-2 border-indigo-800 rounded-lg text-indigo-800 font-bold bg-gray-300"
+  .comments.mt-4
+    %h4 Comments
+    - @comments.each do |comment|
+      = render partial: "comment", locals: {comment: comment}

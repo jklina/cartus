@@ -4,7 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  content_type :string
-#  sentiment    :integer          default(0), not null
+#  sentiment    :integer          default("like"), not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  content_id   :bigint
