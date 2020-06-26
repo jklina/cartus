@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get "search", to: "search#index"
   get "timeline", to: "timeline#index"
-  root to: "timeline#index"
+  root to: "home#index"
 
   get "home/index"
 
