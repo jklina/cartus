@@ -11,10 +11,11 @@
     .bg-indigo-900
       %header.flex.text-white.px-8.py-3.justify-between.container.lg.mx-auto
         %h1.text-2xl= link_to "Openbook", root_path
-        .search.ml-16
-          = form_with url: search_path, local: true, method: :get do |form|
-            = form.text_field :query, placeholder: 'Johnny Appleseed', class: "outline-none rounded bg-gray-200 border py-2 px-4 text-indigo-800 w-64"
-            = form.submit "Search", class: "bg-indigo-900 ml-2 py-2 px-4 border-2 border-gray-300 rounded-lg text-gray-300 font-bold inline-block"
+        - if signed_in?
+          .search.ml-16
+            = form_with url: search_path, local: true, method: :get do |form|
+              = form.text_field :query, placeholder: 'Johnny Appleseed', class: "outline-none rounded bg-gray-200 border py-2 px-4 text-indigo-800 w-64"
+              = form.submit "Search", class: "bg-indigo-900 ml-2 py-2 px-4 border-2 border-gray-300 rounded-lg text-gray-300 font-bold inline-block"
 
         %nav.flex.items-center
           %ul.block
