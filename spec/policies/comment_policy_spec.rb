@@ -1,27 +1,37 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe CommentPolicy, type: :policy do
-  let(:user) { User.new }
-
-  subject { described_class }
-
-  permissions ".scope" do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :show? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :create? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
   permissions :update? do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it "lets the owner update the comment" do
+      user = build(:user)
+      comment = build(:comment, user: user)
+
+      expect(CommentPolicy).to permit(user, comment)
+    end
+
+    it "doesn't let a non-owner update the comment" do
+      user = build(:user)
+      non_owner = build(:user)
+      comment = build(:comment, user: user)
+
+      expect(CommentPolicy).to_not permit(non_owner, comment)
+    end
   end
 
   permissions :destroy? do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it "lets the owner destroy the comment" do
+      user = build(:user)
+      comment = build(:comment, user: user)
+
+      expect(CommentPolicy).to permit(user, comment)
+    end
+
+    it "doesn't let a non-owner destroy the comment" do
+      user = build(:user)
+      non_owner = build(:user)
+      comment = build(:comment, user: user)
+
+      expect(CommentPolicy).to_not permit(non_owner, comment)
+    end
   end
 end

@@ -2,6 +2,6 @@ FactoryBot.define do
   factory :comment do
     body { "MyText" }
     user
-    commentable { post }
+    association :commentable, factory: :post
   end
 end
