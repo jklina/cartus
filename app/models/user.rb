@@ -66,7 +66,7 @@ class User < ApplicationRecord
   end
 
   def friends_posts
-    Post.where(user_id: friends_ids.push(id))
+    Post.where(user_id: friends_ids.push(id)).order(created_at: :asc)
   end
 
   private

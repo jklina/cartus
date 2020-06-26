@@ -21,7 +21,7 @@
           %span.text-xs Friends
         - elsif current_user.invited?(@user)
           %span.text-xs Invited
-        - elsif !@user == current_user
+        - elsif !(@user == current_user)
           = link_to(inline_svg_tag("icons/plus-circle.svg"), invites_path(params: { relationship: { related_id: @user.id } }), method: :post, id: "add-friend" )
 
     #my-elm-container
