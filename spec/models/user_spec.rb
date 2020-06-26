@@ -48,7 +48,7 @@ RSpec.describe User, type: :model do
       create(:relationship, relatee: user1, related: user3, accepted: true)
       create(:relationship, relatee: user4, related: user1, accepted: true)
 
-      expect(user1.friends_posts).to eq([user1_post, user2_post, user3_post, user4_post])
+      expect(user1.friends_posts).to eq([user4_post, user3_post, user2_post, user1_post])
     end
   end
 end

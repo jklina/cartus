@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "reaction/create"
+  get "reaction/destroy"
   get "search", to: "search#index"
   get "timeline", to: "timeline#index"
   root to: "home#index"
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
   resources :invites, except: [:show]
   resources :post_images, only: [:create, :destroy]
   resources :user_profile_images, only: [:create, :destroy]
+  resources :reactions, only: [:create, :destroy]
 end

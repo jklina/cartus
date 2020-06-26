@@ -24,6 +24,7 @@ class User < ApplicationRecord
   include Clearance::User
 
   has_many :posts, dependent: :destroy
+  has_many :reactions, dependent: :destroy
   has_many :images, dependent: :destroy
   has_many :initiated_relationships, -> { where(accepted: true) }, foreign_key: :relatee_id, dependent: :destroy, class_name: "Relationship"
   has_many :accepted_relationships, -> { where(accepted: true) }, foreign_key: :related_id, dependent: :destroy, class_name: "Relationship"
@@ -66,7 +67,11 @@ class User < ApplicationRecord
   end
 
   def friends_posts
-    Post.where(user_id: friends_ids.push(id)).order(created_at: :asc)
+    Post.where(user_id: friends_ids.push(id)).order(created_at: :desc)
+  end
+
+  def reaction_to(content)
+    reactions.where(content: content).first
   end
 
   private

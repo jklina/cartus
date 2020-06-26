@@ -2,9 +2,9 @@
 - if post.images.present?
   = link_to(image_tag(url_for(post.preview_image), class: "preview-image rounded-t"), user_post_path(@user, post))
   .bg-gray-300.border-r.border-l.border-dotted.border-gray-600.flex
-    = render partial: "post_body", locals: {post: post}
-  = render partial: "post_footer", locals: {post: post}
+    = render partial: "shared/post/post_body", locals: {post: post}
+  = render partial: "shared/post/post_footer", locals: {post: post}
 - else
   .bg-gray-300.border-t.border-r.border-l.border-dotted.border-gray-600.rounded-t.flex
-    = render partial: "post_body", locals: {post: post}
-  = render partial: "post_footer", locals: {post: post}
+    = render partial: "shared/post/post_body", locals: {post: post}
+  = render partial: "shared/post/post_footer", locals: {post: post}
