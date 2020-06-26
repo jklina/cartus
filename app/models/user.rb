@@ -66,7 +66,7 @@ class User < ApplicationRecord
   end
 
   def friends_posts
-    Post.where(user_id: friends_ids)
+    Post.where(user_id: friends_ids.push(id))
   end
 
   private
