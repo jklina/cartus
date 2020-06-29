@@ -12,7 +12,7 @@
     .actions.flex
       - if policy(comment).update?
         = link_to(inline_svg_tag("icons/edit.svg"), edit_comment_path(comment), class: "mr-2")
-        = link_to(inline_svg_tag("icons/trash-2.svg"), comment_path(comment), class: "text-sm text-red-800", id: "delete-comment", method: :delete)
+        = link_to(inline_svg_tag("icons/trash-2.svg"), comment_path(comment), class: "text-sm text-red-800", id: "remove-comment", method: :delete)
       - else
         %span.mr-2= comment.reactions.size
         - if current_user.reaction_to(comment)

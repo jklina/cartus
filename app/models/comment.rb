@@ -23,6 +23,7 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :commentable, polymorphic: true
+  has_many :reactions, as: :content, dependent: :destroy
 
   validates_presence_of :commentable, :user
 end

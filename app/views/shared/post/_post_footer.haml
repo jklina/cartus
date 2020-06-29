@@ -1,6 +1,6 @@
 .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.justify-between
   .actions
-    = link_to("Comment", user_post_path(post.user, post))
+    = link_to("Comment", post_path(post))
   .actions.flex
     - if policy(post).update?
       = link_to(inline_svg_tag("icons/edit.svg"), edit_post_path(post), class: "mr-2")

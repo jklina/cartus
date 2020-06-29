@@ -1,6 +1,6 @@
 .mb-4.shadow-lg
 - if post.images.present?
-  = link_to(image_tag(url_for(post.preview_image), class: "preview-image rounded-t"), user_post_path(@user, post))
+  = link_to(image_tag(url_for(post.preview_image), class: "preview-image rounded-t"), post_path(post))
   .bg-gray-300.border-r.border-l.border-dotted.border-gray-600.flex
     = render partial: "shared/post/post_body", locals: {post: post}
   = render partial: "shared/post/post_footer", locals: {post: post}

@@ -15,6 +15,14 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
+    @comment = @user.comments.find(params[:id])
+    if @comment.destroy
+      flash.notice = "Your comment has been removed."
+    else
+      flash.alert = "Your comment has not been removed."
+    end
+    redirect_back(fallback_location: timeline_path)
   end
 
   private
