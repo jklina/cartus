@@ -3,10 +3,10 @@
     = link_to("#{pluralize(post.comments.size, "Comment")}", post_path(post), class: "underline")
   .actions.flex
     - if policy(post).update?
-      %span.mr-2= post.reactions.size
-      = inline_svg_tag("icons/thumbs-up.svg", class: "mr-6") 
       = link_to(inline_svg_tag("icons/edit.svg"), edit_post_path(post), class: "mr-2")
       = link_to(inline_svg_tag("icons/trash-2.svg"), post_path(post), class: "text-sm text-red-800", id: "delete-post", method: :delete)
+      %span.ml-6= post.reactions.size
+      = inline_svg_tag("icons/thumbs-up.svg", class: "ml-2") 
     - else
       %span.mr-2= post.reactions.size
       - if current_user.reaction_to(post)
