@@ -10,7 +10,7 @@
   %body.bg-gray-300.text-gray-700
     .bg-indigo-900
       %header.flex.text-white.px-8.py-3.justify-between.container.lg.mx-auto
-        %h1.text-2xl= link_to "Openbook", root_path
+        %h1.text-2xl= link_to "Openbook", timeline_path
         - if signed_in?
           .search.ml-16
             = form_with url: search_path, local: true, method: :get do |form|
