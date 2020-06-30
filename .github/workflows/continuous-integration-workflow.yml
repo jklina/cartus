@@ -2,9 +2,9 @@ name: Run tests
 on: [push]
 jobs:
   test:
+    env:
+      DATABASE_URL: postgresql://test_user:test_password@localhost/test_db?pool=5
     runs-on: ubuntu-latest
-      env:
-        DATABASE_URL: postgresql://test_user:test_password@localhost/test_db?pool=5
       services:
         postgres:
           image: postgres:11
