@@ -21,5 +21,4 @@ jobs:
         ruby-version: 2.6.6 # Not needed with a .ruby-version file
     - run: bundle install
     - run: yarn install
-    - run: bundle exec rake db:setup
     - run: bundle exec rake
