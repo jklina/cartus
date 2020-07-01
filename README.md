@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Cartus, an open source social network. Cartus is built using Rails, Elm and Tailwind with the vast majority of rendering done server side. Basic, old school, boring.
 
-Things you may want to cover:
+### Setting Up
 
-* Ruby version
+To setup Cartus:
 
-* System dependencies
+* Install Ruby, Postgres, Yarn
+* Make sure Postgres is running
+* run `bundle install`
+* run `yarn install`
+* run `bundle exec rake db:setup`
+* run `bundle exec rails server`
 
-* Configuration
+### Running Tests
 
-* Database creation
+We're just using Rspec for now. So running:
 
-* Database initialization
+`bundle exec rake` outta do it.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
