@@ -24,6 +24,7 @@ class User < ApplicationRecord
   include Clearance::User
 
   has_many :posts, dependent: :destroy
+  has_many :posts_from_friends, foreign_key: :recipient_id, dependent: :destroy, class_name: "Post"
   has_many :comments, dependent: :destroy
   has_many :reactions, dependent: :destroy
   has_many :images, dependent: :destroy
@@ -73,6 +74,10 @@ class User < ApplicationRecord
 
   def reaction_to(content)
     reactions.where(content: content).first
+  end
+
+  def friends
+    User.where(id: friends_ids)
   end
 
   private
