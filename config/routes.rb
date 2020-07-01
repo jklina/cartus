@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   get "home/index"
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    resources :friends_posts, only: [:new, :create]
+  end
   resources :posts
   resources :comments, except: [:show, :new]
   resources :invites, except: [:show]
