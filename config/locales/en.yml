@@ -30,4 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  title: "Openbook"
+  users:
+    new:
+      heading: "Signup to Openbook"
+      submit_button: "Sign up"

@@ -105,4 +105,14 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  config.absolute_site_url = "https://cartus.org"
+
+  config.action_mailer.smtp_settings = {
+    address: Rails.application.credentials.dig(:aws, :ses, :server_name),
+    port: 587,
+    user_name: Rails.application.credentials.dig(:aws, :ses, :username),
+    password: Rails.application.credentials.dig(:aws, :ses, :smtp_password),
+    authentication: :login,
+    enable_starttls_auto: true
+  }
 end
