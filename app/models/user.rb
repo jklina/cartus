@@ -2,17 +2,19 @@
 #
 # Table name: users
 #
-#  id                 :bigint           not null, primary key
-#  birthday           :date
-#  confirmation_token :string(128)
-#  email              :string           not null
-#  encrypted_password :string(128)      not null
-#  first_name         :string
-#  gender             :integer
-#  last_name          :string
-#  remember_token     :string(128)      not null
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
+#  id                       :bigint           not null, primary key
+#  birthday                 :date
+#  confirmation_token       :string(128)
+#  email                    :string           not null
+#  email_confirmation_token :string           default(""), not null
+#  email_confirmed_at       :datetime
+#  encrypted_password       :string(128)      not null
+#  first_name               :string
+#  gender                   :integer
+#  last_name                :string
+#  remember_token           :string(128)      not null
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
 #
 # Indexes
 #
@@ -78,6 +80,15 @@ class User < ApplicationRecord
 
   def friends
     User.where(id: friends_ids)
+  end
+
+  def confirm_email!
+    self.email_confirmed_at = Time.current
+    save!
+  end
+
+  def confirmed?
+    email_confirmed_at.present?
   end
 
   private

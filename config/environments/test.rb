@@ -46,4 +46,9 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
   config.middleware.use Clearance::BackDoor
+
+  config.absolute_site_url = "http://localhost:3000"
+  config.action_mailer.delivery_method = :test
+  config.active_job.queue_adapter = :test
+  config.action_mailer.default_url_options = {host: "localhost:3000"}
 end

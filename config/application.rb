@@ -40,5 +40,8 @@ module Openbook
       g.view_specs false
       g.helper_specs false
     end
+
+    config.action_mailer.preview_path = "#{Rails.root}/spec/mailer_previews"
+    config.active_job.queue_adapter = :sidekiq
   end
 end

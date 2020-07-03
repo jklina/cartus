@@ -4,6 +4,18 @@ class UsersController < ApplicationController
     @posts = @user.posts.or(@user.posts_from_friends).order(created_at: :desc)
   end
 
+  def create
+    @user = User.new(user_params)
+    @user.email_confirmation_token = Clearance::Token.new
+
+    if @user.save!
+      UserMailer.registration_confirmation(@user).deliver_later
+      redirect_back_or sign_in_path
+    else
+      render template: "users/new"
+    end
+  end
+
   def edit
     @user = current_user
   end
@@ -22,6 +34,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :birthday, :gender)
+    params.require(:user).permit(:first_name, :last_name, :birthday, :gender, :email, :password)
   end
 end

@@ -17,11 +17,13 @@ gem "inline_svg"
 gem "pundit"
 gem "textacular"
 gem "aws-sdk-s3"
+gem "sidekiq"
 
 group :test do
   gem "shoulda-matchers"
   gem "capybara"
   gem "launchy"
+  gem "email_spec"
 end
 
 group :development, :test do
