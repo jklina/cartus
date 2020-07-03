@@ -31,11 +31,6 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
-  config.action_mailer.perform_caching = false
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -61,11 +56,11 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.absolute_site_url = "http://localhost:3000"
-  config.action_mailer.default_url_options = {host: "localhost:3000"}
+  config.action_mailer.default_url_options = {host: "cartus.org"}
   config.action_mailer.smtp_settings = {
     address: Rails.application.credentials.dig(:aws, :ses, :server_name),
     port: 587,
-    user_name: Rails.application.credentials.dig(:aws, :ses, :username),
+    user_name: Rails.application.credentials.dig(:aws, :ses, :smtp_username),
     password: Rails.application.credentials.dig(:aws, :ses, :smtp_password),
     authentication: :login,
     enable_starttls_auto: true

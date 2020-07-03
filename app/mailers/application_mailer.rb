@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "admin@cartus.org"
+  default from: "joshua.klina@gmail.com"
   layout "mailer"
 end

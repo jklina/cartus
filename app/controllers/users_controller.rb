@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user.email_confirmation_token = Clearance::Token.new
 
     if @user.save!
-      UserMailer.registration_confirmation(@user).deliver_later
+      UserMailer.with(@user).registration_confirmation.deliver_later
       redirect_back_or sign_in_path
     else
       render template: "users/new"
