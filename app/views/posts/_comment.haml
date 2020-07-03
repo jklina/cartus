@@ -10,8 +10,7 @@
       %p= comment.body
   .bg-gray-400.px-5.rounded-b.border.border-dotted.border-gray-600.py-2.flex.flex-row-reverse
     .actions.flex
-      - if policy(comment).update?
-        = link_to(inline_svg_tag("icons/edit.svg"), edit_comment_path(comment), class: "mr-2")
+      - if policy(comment).destroy?
         = link_to(inline_svg_tag("icons/trash-2.svg"), comment_path(comment), class: "text-sm text-red-800", id: "remove-comment", method: :delete)
       - else
         %span.mr-2= comment.reactions.size
