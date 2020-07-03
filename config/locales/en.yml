@@ -30,8 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  title: "Openbook"
+  title: "Cartus"
   users:
     new:
-      heading: "Signup to Openbook"
+      heading: "Signup to Cartus"
       submit_button: "Sign up"
