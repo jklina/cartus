@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save!
       UserMailer.with(@user).registration_confirmation.deliver_later
+      flash.notice = "Your profile has been created. Please confirm your email to login!"
       redirect_back_or sign_in_path
     else
       render template: "users/new"
