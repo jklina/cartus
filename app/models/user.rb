@@ -43,6 +43,7 @@ class User < ApplicationRecord
     as: :imageable,
     dependent: :destroy,
     class_name: "Image"
+  has_many :notifications
 
   enum gender: {male: 0, female: 1}
 

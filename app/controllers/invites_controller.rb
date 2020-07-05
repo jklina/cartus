@@ -12,6 +12,11 @@ class InvitesController < ApplicationController
       accepted: false
     )
     if @relationship.save
+      Notification.create!(
+        user: @related,
+        target: current_user,
+        message: "You received a friend request from #{current_user.full_name}"
+      )
       flash.notice = "An invitation has been sent"
     else
       flash.alert = "There was a problem sending this invite"
@@ -23,6 +28,11 @@ class InvitesController < ApplicationController
     @relationship = Relationship.find(params[:id])
     @relationship.accepted = true
     if @relationship.save
+      Notification.create!(
+        user: @relationship.relatee,
+        target: @relationship.related,
+        message: "Your request has been accepted by #{@relationship.relatee.full_name}"
+      )
       flash.notice = "You accepted the invitation!"
     else
       flash.alert = "There was a problem accepting the invitation"
