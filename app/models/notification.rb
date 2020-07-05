@@ -23,4 +23,8 @@
 class Notification < ApplicationRecord
   belongs_to :target, polymorphic: true
   belongs_to :user
+
+  def self.unread
+    where(read: false)
+  end
 end

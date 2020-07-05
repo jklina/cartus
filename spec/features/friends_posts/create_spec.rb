@@ -11,8 +11,10 @@ describe "creating a post", type: :feature do
 
     fill_in("post_body", with: "This is my post.")
     click_button "Create Post"
+    friend.reload
 
     expect(page).to have_current_path(user_path(friend))
     expect(page).to have_content("This is my post.")
+    expect(friend.notifications.size).to eq(1)
   end
 end

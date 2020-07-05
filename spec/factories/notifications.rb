@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :notification do
-    target { nil }
+    association :target, factory: :post
     read { false }
-    user { nil }
+    user
+    message { "You received a notification!" }
   end
 end
