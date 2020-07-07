@@ -13,8 +13,9 @@ class FriendsPostsController < ApplicationController
     if @post.save && unassigned_images.update_all(imageable_id: @post.id, imageable_type: "Post")
       Notification.create!(
         user: @friend,
+        initiator: current_user,
         target: @post,
-        message: "#{current_user.full_name} has posted on your page.",
+        message: "#{current_user.full_name} has posted on your page."
       )
       flash.notice = "Your post has been created."
       redirect_to @friend

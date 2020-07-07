@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     if @comment.save
       Notification.create!(
         user: @comment.commentable.user,
+        initiator: @user,
         target: @comment.commentable,
         message: "#{current_user.full_name} has commented on your #{@comment.commentable.class.name.titleize}."
       )

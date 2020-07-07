@@ -14,6 +14,7 @@ class InvitesController < ApplicationController
     if @relationship.save
       Notification.create!(
         user: @related,
+        initiator: current_user,
         target: current_user,
         message: "You received a friend request from #{current_user.full_name}"
       )
@@ -30,6 +31,7 @@ class InvitesController < ApplicationController
     if @relationship.save
       Notification.create!(
         user: @relationship.relatee,
+        initiator: current_user,
         target: @relationship.related,
         message: "Your request has been accepted by #{@relationship.relatee.full_name}"
       )

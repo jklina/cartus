@@ -5,6 +5,7 @@ class ReactionsController < ApplicationController
     @reaction.save!
     Notification.create!(
       user: @reaction.content.user,
+      initiator: @user,
       target: @reaction.content,
       message: "#{current_user.full_name} has liked your #{@reaction.content.class.name.titleize}."
     )

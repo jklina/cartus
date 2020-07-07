@@ -64,9 +64,11 @@ ActiveRecord::Schema.define(version: 2020_07_05_204353) do
     t.bigint "target_id"
     t.boolean "read", default: false, null: false
     t.bigint "user_id", null: false
+    t.bigint "initiator_id", null: false
     t.text "message", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["initiator_id"], name: "index_notifications_on_initiator_id"
     t.index ["target_type", "target_id"], name: "index_notifications_on_target_type_and_target_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
@@ -123,6 +125,7 @@ ActiveRecord::Schema.define(version: 2020_07_05_204353) do
   add_foreign_key "comments", "users"
   add_foreign_key "images", "users"
   add_foreign_key "notifications", "users"
+  add_foreign_key "notifications", "users", column: "initiator_id"
   add_foreign_key "posts", "users"
   add_foreign_key "posts", "users", column: "recipient_id"
   add_foreign_key "relationships", "users", column: "related_id"

@@ -92,6 +92,10 @@ class User < ApplicationRecord
     email_confirmed_at.present?
   end
 
+  def has_unread_notifications?
+    notifications.unread.exists?
+  end
+
   private
 
   def friends_ids
