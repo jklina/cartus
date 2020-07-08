@@ -10,11 +10,13 @@ describe "managing reactions" do
       visit user_path(user, as: visitor)
 
       click_link "like"
+      user.reload
 
       expect(page).to have_content("Liked!")
       reaction = Reaction.last
       expect(reaction.user).to eq(visitor)
       expect(reaction.content).to eq(post)
+      expect(user.notifications.size).to eq(1)
     end
   end
 

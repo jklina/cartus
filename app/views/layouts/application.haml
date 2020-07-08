@@ -17,17 +17,21 @@
               = form.text_field :query, placeholder: 'Johnny Appleseed', class: "outline-none rounded bg-gray-200 border py-2 px-4 text-indigo-800 w-64"
               = form.submit "Search", class: "bg-indigo-900 ml-2 py-2 px-4 border-2 border-gray-300 rounded-lg text-gray-300 font-bold inline-block"
 
-        %nav.flex.items-center
-          %ul.block
-            %li
-              - if signed_in?
-                = link_to "Home", timeline_path, class: "mr-6"
-                = link_to "Invites", invites_path, class: "mr-6"
-                = link_to "Sign Out",
-                  sign_out_path,
-                  method: :delete
-              -else
-                = link_to "Sign in", sign_in_path, class: "block"
+        %nav
+          %ul.block.flex.items-center.h-full
+            - if signed_in?
+              %li= link_to "Home", timeline_path, class: "mr-6"
+              %li= link_to "Invites", invites_path, class: "mr-6"
+              - if current_user.has_unread_notifications?
+                %li.notifications.inline-block.mr-6
+                  .badge.flex
+                    %span.notifications-count.bg-red-600.text-white.rounded-full.h-6.w-6.text-xs.flex.items-center.justify-center.mr-1= current_user.notifications.unread.size
+                    = link_to "Notifications", notifications_path
+              %li= link_to "Sign Out",
+                sign_out_path,
+                method: :delete
+            -else
+              %li= link_to "Sign in", sign_in_path, class: "block"
     - if flash[:notice]
       %div.flash.bg-green-300.p-4.text-green-800.border-b.border-green-800.border-dotted= flash[:notice]
     - elsif flash[:alert]

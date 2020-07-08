@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_214253) do
+ActiveRecord::Schema.define(version: 2020_07_05_204353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,20 @@ ActiveRecord::Schema.define(version: 2020_07_02_214253) do
     t.bigint "user_id", null: false
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
     t.index ["user_id"], name: "index_images_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "target_type"
+    t.bigint "target_id"
+    t.boolean "read", default: false, null: false
+    t.bigint "user_id", null: false
+    t.bigint "initiator_id", null: false
+    t.text "message", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["initiator_id"], name: "index_notifications_on_initiator_id"
+    t.index ["target_type", "target_id"], name: "index_notifications_on_target_type_and_target_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -110,6 +124,8 @@ ActiveRecord::Schema.define(version: 2020_07_02_214253) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "users"
+  add_foreign_key "notifications", "users"
+  add_foreign_key "notifications", "users", column: "initiator_id"
   add_foreign_key "posts", "users"
   add_foreign_key "posts", "users", column: "recipient_id"
   add_foreign_key "relationships", "users", column: "related_id"

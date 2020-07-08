@@ -43,6 +43,7 @@ class User < ApplicationRecord
     as: :imageable,
     dependent: :destroy,
     class_name: "Image"
+  has_many :notifications
 
   enum gender: {male: 0, female: 1}
 
@@ -89,6 +90,10 @@ class User < ApplicationRecord
 
   def confirmed?
     email_confirmed_at.present?
+  end
+
+  def has_unread_notifications?
+    notifications.unread.exists?
   end
 
   private

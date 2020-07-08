@@ -3,6 +3,12 @@ class CommentsController < ApplicationController
     @user = current_user
     @comment = @user.comments.build(comment_params)
     if @comment.save
+      Notification.create!(
+        user: @comment.commentable.user,
+        initiator: @user,
+        target: @comment.commentable,
+        message: "#{current_user.full_name} has commented on your #{@comment.commentable.class.name.titleize}."
+      )
       flash.notice = "Your comment has been created."
       redirect_back(fallback_location: timeline_path)
     else

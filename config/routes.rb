@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get "search", to: "search#index"
   get "timeline", to: "timeline#index"
+  get "notifications", to: "notifications#index"
   root to: "home#index"
 
   get "home/index"

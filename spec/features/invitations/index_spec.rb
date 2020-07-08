@@ -64,10 +64,12 @@ describe "a user's list of invitations", type: :feature do
     visit invites_path(as: invitation_receiver)
     click_on("Accept")
     relationship.reload
+    invitation_sender.reload
 
     expect(page).to have_current_path(invites_path(as: invitation_receiver))
     expect(page).to have_content("You accepted the invitation")
     expect(page).to_not have_content("Laura Klina")
     expect(relationship.accepted?).to be_truthy
+    expect(invitation_sender.notifications.size).to eq(1)
   end
 end

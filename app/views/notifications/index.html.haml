@@ -1,0 +1,12 @@
+.container.lg.mx-auto.px-5.min-h-screen.py-5
+  .min-h-screen
+    %h3.text-3xl Notifications
+    .notifications.mt-4
+      - @notifications.each do |notification|
+        .received-invitation.px-4.py-4.h-20.flex.justify-between{ class: cycle("bg-gray-200", "bg-gray-400")}
+          .info.flex.items-center
+            -if notification.initiator.post_thumbnail_url.present?
+              = image_tag(url_for(notification.initiator.post_thumbnail_url), class: "h-12 rounded-full inline-block mr-4")
+            %span= notification.message
+          .actions
+            = link_to "View", notification.target, class: "inline-block py-2 px-4 border-2 border-indigo-800 rounded-lg text-indigo-800 font-bold"

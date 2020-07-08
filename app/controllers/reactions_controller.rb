@@ -3,6 +3,12 @@ class ReactionsController < ApplicationController
     @user = current_user
     @reaction = @user.reactions.build(reaction_params)
     @reaction.save!
+    Notification.create!(
+      user: @reaction.content.user,
+      initiator: @user,
+      target: @reaction.content,
+      message: "#{current_user.full_name} has liked your #{@reaction.content.class.name.titleize}."
+    )
     flash.notice = "Liked!"
     redirect_back(fallback_location: timeline_path)
   end
